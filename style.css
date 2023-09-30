@@ -16,21 +16,32 @@ html {
 .info-user{
     flex: 1; 
     display: flex;
-    border: solid black;
     justify-content: center;
     align-content: center;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     flex-direction: column;
 }
-.info-user .cad,
-.info-user.show-teste .log
+.info-user .form-img-user,
+.info-user.show-teste .cad
 {
     display: none;
 }
 
-.info-user.show-teste .cad{
+.info-user.show-teste .form-img-user{
     display: flex;
+}
+
+
+.info-user .form-op,
+.info-user.show-img-perfil .form-img-user
+{
+    display: none;
+}
+.info-user.show-img-perfil .form-op{
+    display: flex;
+
+
 }
 .login-link{
     text-align: center;
@@ -153,3 +164,18 @@ text-align: center;
     outline: none;
    
   }
+.label-enviar-img{
+
+    display: block;
+    width: 100%;
+    max-width: 20rem;
+    background: #e3362c;
+    color: #fff;
+    padding: 1.2rem;
+    margin: 1rem auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#input-file{
+display: none;
+}

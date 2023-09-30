@@ -1,18 +1,37 @@
-const cadbtn = document.querySelectorAll(".form .btn-16 a");
-const formpopup = document.querySelectorAll("info-user");
-cadbtn.forEach(link => {
-    link.addEventListener("click", (e) => {
-        e.preventDefault();
-        //formpopup.classList[link.id === "teste-a" ? 'add' : 'remove']("show-teste");
-         // Encontre o elemento "info-user" pai do link clicado
-         const formPopup = link.closest(".info-user");
+const formulario = document.getElementById('meuFormulario');
 
-         // Verifique se encontrou um elemento "info-user" antes de adicionar/ remover classes
-         if (formPopup) {
-             formPopup.classList[link.id === "teste-a" ? 'add' : 'remove']("show-teste");
-         }
-    })
-})
+        formulario.addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede o envio padrão do formulário
 
+            // Execute aqui qualquer validação adicional do formulário, se necessário
 
+            // Simule o envio do formulário para ilustração
+            
+                // Substitua este trecho pela lógica real de envio para o servidor
+                
+                
+                //lógica de manipulação de classes
+                const formPopup = document.querySelector('.info-user');
+                const link = document.getElementById('teste-a');
+                formPopup.classList.add('show-teste');
+             
+        });
+        
+        
+const formimg = document.getElementById('imagemPerfil');
+        formimg.addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede o envio padrão do formulário
 
+            // Execute aqui qualquer validação adicional do formulário, se necessário
+
+            // Simule o envio do formulário para ilustração
+            
+                // Substitua este trecho pela lógica real de envio para o servidor
+                
+                
+                //lógica de manipulação de classes
+                const formPopup = document.querySelector('.info-user');
+                const link = document.getElementById('teste-b');
+                formPopup.classList.add('show-img-perfil');
+             
+        });
