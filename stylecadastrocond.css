@@ -1,0 +1,258 @@
+/*-----------------PAGINA (TODAS AS TELAS)-----------------------*/
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 10px, para unidades relativas como rem/em 1 rem = 10px*/
+}
+body{
+    height: 100vh;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+
+}
+
+.info-user{
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 5.5rem;
+}
+
+
+
+
+
+/*-----------------CAIXA AZUL DE FUNDO (TODAS AS TELAS)-----------------------*/
+
+.form{
+    background-color:#4b5fd4;
+    border-radius: 20px;
+    max-height: 100%;
+    width: 520px;
+    margin: 3rem auto ;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    margin-bottom: 10rem;
+}
+
+
+/*-----------------PAPEL DE PAREDE CONDOMINIO (TODAS AS TELAS)-----------------------*/
+
+.img-logincad {
+    flex: 1; 
+}
+
+#img-logincad-imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*-----------------TEXTO TITULO (TODAS AS TELAS)-----------------------*/
+
+@font-face {
+    font-family: 'Tommy Medium Personal';
+    src: url(../fontes/MADE\ TOMMY\ Medium_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tommy Regular Personal';
+    src: url(../fontes/MADE\ TOMMY\ Regular_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tommy Light Personal';
+    src: url(../fontes/MADE\ TOMMY\ Light_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.cabecalho{
+    text-align: center;
+    margin: auto;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    margin: 10px 0;
+}
+
+.titulo{
+    font-size: 4rem;
+    font-family: 'Tommy Medium Personal';
+    color: white;
+}
+
+
+
+
+/*-----------------LOGO (TODAS AS TELAS)-----------------------*/
+
+
+
+.form-logo-img{
+    max-width: 200px;
+    max-width:200px;
+    object-fit: cover;
+    border-radius: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+
+/*-----------------TEXTO ACIMA DAS CAIXAS DE TEXTO (TELA CADASTRO)----------------------*/
+
+
+.label-infos-usuarios{
+    font-size: 2rem;
+    font-family: 'Tommy Regular Personal';   
+    text-align: left;
+    color: white;
+    margin: 0 5px;
+}
+
+/*-----------------ASTERISCO OBRIGATORIO (TELA CADASTRO)-----------------------*/
+
+.form-dados-obrigatorio{
+    color: red;
+ }
+
+/*-----------------CAIXAS DE TEXTO (TELA CADASTRO)-----------------------*/
+
+.form-input-text{
+    width: 100%; 
+    padding: 1.5rem;
+    max-width: 60rem;
+    border-radius: 10px;
+    border-color: #202855;
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+/*-----------------BOTAO PROXIMO (TELA CADASTRO)-----------------------*/
+
+.custom-btn {
+    background: white;
+    color: #4b5fd4;
+    font-family: 'Tommy Regular Personal';
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 2rem;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em white;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    margin: 2rem auto;
+  }
+  
+  .custom-btn .icon {
+    background: #4b5fd4;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em white;
+    right: 0.3em;
+    transition: all 0.3s;
+  }
+  
+  .custom-btn:hover .icon {
+    width: calc(100% - 0.6em);
+  }
+  
+  .custom-btn .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: white;
+  }
+  
+  .custom-btn:hover .icon svg {
+    transform: translateX(0.1em);
+  }
+  
+  .custom-btn:active .icon {
+    transform: scale(0.95);
+  }
+
+
+/*-----------------FOTO DE PERFIL (TELA ENVIAR IMAGEM)-----------------------*/
+
+.form-perfil-div{
+    text-align: center;
+ 
+    margin: 10px 0;
+}
+
+.form-perfil-img{
+    max-width: 200px;
+    max-height:200px;
+    object-fit: cover;
+    border-radius: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+  
+/*-----------------TEXTO ENVIAR IMAGEM (TELA ENVIAR IMAGEM)-----------------------*/
+
+
+.label-enviar-img{
+
+    display: block;
+    width: 100%;
+    max-width: 20rem;
+    background: white;
+    color: #4b5fd4;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    border-radius: 0.9em;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Tommy Regular Personal';
+    font-size: 2rem;
+}
+
+.label-enviar-img:hover{
+    background-color: #202855;
+    color: white;
+}
+
+#input-file{
+display: none;
+}
+
+  
+.subtitulo{
+    font-family: 'Tommy Regular Personal';
+    font-size: 2rem;
+    color: white;
+}   
