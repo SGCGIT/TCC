@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RECLAMAÇÕES</title>
+</head>
+<body>
+    <h2>RECLAMAÇÕES</h2>
+    <form action="formsReclamações.php" method="post" enctype="multipart/form-data">
+        <label for="titulo">TÍTULO:</label>
+        <input type="text" name="titulo" required><br></br>
+
+
+        <label for="tipo">TIPO:</label>
+        <label>
+        <input type="radio" name="tipo" value="urgente" >
+        <span class="label-opcao opcao-sindico">Urgente</span>
+        </label>
+        <label>
+        <input type="radio" name="tipo" value="importante">
+        <span class="label-opcao opcao-morador">Importante</span>
+        </label><br></br>
+
+
+
+        <label for="tipo">ÁREA:</label>
+        <label>
+        <input type="radio" name="area" value="interna">
+        <span class="label-opcao opcao-sindico">Interna</span>
+        </label>
+        <label>
+        <input type="radio" name="area" value="externa">
+        <span class="label-opcao opcao-morador">Externa</span>
+        </label><br></br>
+
+
+        <label for="story">DESCRIÇÃO:</label>
+        <textarea id="descricao" name="descricao"></textarea><br></br>
+        <input type="submit" value="Cadastrar">
+    </form>     
+</body>
+</html>
