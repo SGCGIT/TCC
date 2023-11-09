@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo de E-mail</title>
+</head>
+<body>
+
+    <form action="/seu-endereco-de-envio" method="post">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+        <!-- Botão de Envio -->
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        document.getElementById('email').addEventListener('input', function() {
+            // Obtém o valor atual do campo de e-mail
+            var email = this.value;
+
+            // Remove caracteres indesejados usando uma expressão regular
+            var novoEmail = email.replace(/[^a-zA-Z0-9@._-]/g, '');
+
+            // Atualiza o valor do campo de e-mail com o valor filtrado
+            this.value = novoEmail;
+        });
+    </script>
+
+</body>
+</html>
