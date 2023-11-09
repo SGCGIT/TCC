@@ -1,0 +1,47 @@
+<!--
+    CÓDIGO INCOMPLETO
+
+    * Funcao para o campo 'cnpj'
+    * aplicacao de mascara em tempo real
+    * codigo em html apenas para fins ilustrativos e de testes (Considerar somente o script)
+    * Lado cliente
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com Restrição de Números em Tempo Real</title>
+
+    <!-- Inclui a biblioteca inputmask -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.9/jquery.inputmask.min.js"></script>
+</head>
+<body>
+
+    <form action="/seu-endereco-de-envio" method="post">
+        <label for="cnpj">CNPJ:</label>
+        <input type="text" id="cnpj" name="cnpj" placeholder="Digite o CNPJ" required>
+
+        <!-- Botão de Envio -->
+        <input type="submit" value="Enviar">
+    </form>
+
+    <!-- Script para aplicar a restrição de números em tempo real -->
+    <script>
+        // Adiciona a restrição de números em tempo real
+        $(document).ready(function(){
+            $('#cnpj').on('input', function() {
+                // Remove caracteres não numéricos
+                var cnpj = this.value.replace(/\D/g, '');
+                // Atualiza o valor do campo de CNPJ com o valor filtrado
+                this.value = cnpj;
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/stylecadastro.css">
+    <script src="js/scriptcadastro.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+
+            <!-----------------------------------TELA CADASTRO--------------------------------------------->
+     
+     <div class="content">
+        <div class="info-user">
+
+            <div class="form-logo-div">
+                    <img src="imagens/logo.png" alt="imagem" class="form-logo-img">
+            </div>
+            
+            <div class="form cad">
+                
+                <div class="cabecalho cadastro">
+                    <p class="titulo cadastro-titulo">Cadastre-se!</p>
+                    <p class="subtitulo cadastro-link">Já possui uma conta? <span><a href="indexlogin.html" class="linkcad">Entre aqui.</a></span></p>
+                </div>
+                <br>
+                <div class="form-dados">
+                    <form action="/script.js" method="post" id="meuFormulario">
+                        
+                        <p class="label-infos-usuarios">Nome completo<span class="form-dados-obrigatorio">*</span></p>
+                        <input type="text" name="" id="" class="form-input-text" required>
+                        <p class="label-infos-usuarios">Email <span class="form-dados-obrigatorio">*</span></p>
+                        <input type="email" name="" id="" class="form-input-text" required>
+                        <p class="label-infos-usuarios">Senha <span class="form-dados-obrigatorio" >*</span></p>
+                        <input type="password" name="" id="" class="form-input-text" required>
+
+                        <br>
+
+                       <button class="custom-btn btn1"> Próximo
+                        <div class="icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+                        </div>
+                      </button>
+                    
+                    </form>
+                </div>
+            </div>
+
+            <!-----------------------------------TELA ENVIAR IMAGEM--------------------------------------------->
+            
+            <div class="form form-img-user">
+
+                <div class="form-dados">
+                    <form action="/script.js" method="post" id="imagemPerfil">
+
+                        <div class="cabecalho selecionarimg">
+                            <p class="titulo selecionarimg-titulo">Selecione uma imagem</p>
+                            <p class="subtitulo selecionarimg-link">(Opcional)</p>
+                        </div>
+                        
+                        <div class="form-perfil-div">
+                            <img src="imagens/profile.png" alt="exemplo" class="form-perfil-img" id="preview-ft-perfil">
+                        </div>
+
+                        <label for="input-file" class="label-enviar-img">Selecionar</label>
+                        <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+
+                        <br>
+                        <button class="custom-btn btn2" type="submit" id="teste-b">Próximo
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+                            </div>
+                        </button>
+                    </form>
+                </div>  
+            </div>
+
+            <!----------------------------------TELA OPCOES SINDICO E MORADOR---------------------------------------------->
+
+            <div class="form form-op">
+
+                <div class="form-dados">
+                
+                    <div class="cabecalho opcoes">
+                        <p class="titulo opcoes-titulo">Posição no condomínio</p>
+                        <p class="subtitulo opcoes-link">(Obrigatório)</p>
+                    </div>
+                <p class="label-sindico">Você é síndico ou morador?</p>
+                
+                <div class="opcoes">
+                    <div>
+                        <label>
+                            <input type="radio" name="radio" checked="">
+                            <span class="label-opcao opcao-sindico">Síndico</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio">
+                            <span class="label-opcao opcao-morador">Morador</span>
+                        </label>
+                    </div>
+                </div>
+
+                    <button class="custom-btn btn3">Finalizar
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+                        </div>
+                    </button></a>
+                </div>  
+            </div>
+        </div>
+
+        <!-----------------------------------PAPEL DE PAREDE (TODAS AS TELAS)--------------------------------------------->
+
+        <div class="img-logincad">
+            <img src="imagens/condominio.jpeg" alt="imagem" id="img-logincad-imagem">    
+        </div>
+    </div>
+</body>
+
+<script>
+
+    let fotoperfil = document.getElementById("preview-ft-perfil");
+    let inputfile = document.getElementById("input-file");
+
+    inputfile.onchange = function(){
+        fotoperfil.src = URL.createObjectURL(inputfile.files[0])
+    }
+
+</script>
+</html>

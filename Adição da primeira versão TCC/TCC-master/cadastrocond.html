@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylecadastrocond.css">
+    
+    <title>Document</title>
+</head>
+<body>
+
+            <!-----------------------------------TELA CADASTRO--------------------------------------------->
+     
+     <div class="content">
+        <div class="info-user">
+           
+            
+            
+        
+            
+            <div class="form form-img-user">
+
+                <div class="form-dados">
+                    <form action="/script.js" method="post" id="imagemPerfil">
+
+                        <div class="cabecalho selecionarimg">
+                            <p class="titulo selecionarimg-titulo">CRIAÇÃO DE CONDOMÍNIO</p>
+                        </div>
+                        <p class="subtitulo">Selecione a foto de perfil!</p>
+                        <p class="subtitulo">(OBRIGATÓRIO)</p>
+                        <div class="form-perfil-div">
+                            <img src="imagens/profile.png" alt="exemplo" class="form-perfil-img" id="preview-ft-perfil">
+                        </div>
+
+                        <label for="input-file" class="label-enviar-img">Selecionar</label>
+                        <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" required>
+                        
+                        <p class="label-infos-usuarios">Nome<span class="form-dados-obrigatorio">*</span></p>
+                        <input type="text" name="" id="" class="form-input-text" required>
+                        <p class="label-infos-usuarios">CNPJ <span class="form-dados-obrigatorio">*</span></p>
+                        <input type="number" name="" id="" class="form-input-text" required>
+
+                        <br>
+                        <button class="custom-btn btn2" type="submit" id="teste-b">Confirmar
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+                            </div>
+                        </button>
+                    </form>
+                </div>  
+            </div>
+
+            <!----------------------------------TELA OPCOES SINDICO E MORADOR---------------------------------------------->
+
+           
+            
+        </div>
+
+        <!-----------------------------------PAPEL DE PAREDE (TODAS AS TELAS)--------------------------------------------->
+
+        <div class="img-logincad">
+            <img src="imagens/condominio.jpeg" alt="imagem" id="img-logincad-imagem">    
+        </div>
+    </div>
+</body>
+
+<script>
+
+    let fotoperfil = document.getElementById("preview-ft-perfil");
+    let inputfile = document.getElementById("input-file");
+
+    inputfile.onchange = function(){
+        fotoperfil.src = URL.createObjectURL(inputfile.files[0])
+    }
+
+</script>
+</html>
