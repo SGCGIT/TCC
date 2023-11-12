@@ -1,0 +1,46 @@
+<!--
+    * Funcao para o campo 'nome'
+    * resticoes aplicadas
+        - Caracteres indesejados
+        - Espacos extras entre palavras
+        - Primeira letra de cada palavra sempre maiuscula, e o resto minuscula
+    * codigo em html apenas para fins ilustrativos e de testes (Considerar somente o script)
+    * Lado cliente
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restrição e Capitalização em Tempo Real</title>
+</head>
+<body>
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+
+    <script>
+        document.getElementById('nome').addEventListener('input', function() {
+            // Obtém o valor atual do campo de nome
+            var nome = this.value;
+
+            // Converte todas as letras para minúsculas
+            var novoNome = nome.toLowerCase();
+
+            // Remove caracteres indesejados usando uma expressão regular
+            novoNome = novoNome.replace(/[^a-zA-Zà-ú\s]/g, '');
+
+            // Remove espaços extras deixando apenas um entre as palavras
+            novoNome = novoNome.replace(/\s{2,}/g, ' ');
+
+            // Capitaliza a primeira letra de cada palavra
+            novoNome = novoNome.replace(/\b\w/g, function(l){ return l.toUpperCase(); });
+
+            // Atualiza o valor do campo de nome com o valor filtrado
+            this.value = novoNome;
+        });
+    </script>
+
+</body>
+</html>

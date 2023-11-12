@@ -1,0 +1,38 @@
+/*-----------------PAGINA----------------------*/
+
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    background-color: #4b5fd4; /* Azul */
+    padding: 30px;
+}
+
+#content {
+    width: 100%; /* Largura total da página */
+    margin: 20px 0; /* Espaçamento no topo e na parte inferior */
+}
+
+/*-----------------BOTÕES DE FUNCIONALIDADES---------------------*/
+
+.blue-button {
+    background-color: #4b5fd4; /* Mesma cor azul */
+    border: none; /* Remova a borda */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 90px; /* Mesma largura dos quadrados */
+    height: 90px; /* Mesma altura dos quadrados */
+    cursor: pointer; /* Adicione um cursor de ponteiro ao passar o mouse */
+    display: block; /* Tornar os botões em blocos para que fiquem em uma coluna vertical */
+    float: none; /* Remova o alinhamento anterior */
+    clear: left; /* Certifique-se de que os botões estejam limpos à esquerda */
+}
+
+
+
+
