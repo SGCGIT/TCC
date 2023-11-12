@@ -8,9 +8,29 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;800&display=swap');
 
+@font-face {
+    font-family: 'Tommy Medium Personal';
+    src: url(../fontes/MADE\ TOMMY\ Medium_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tommy Regular Personal';
+    src: url(../fontes/MADE\ TOMMY\ Regular_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tommy Light Personal';
+    src: url(../fontes/MADE\ TOMMY\ Light_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body{
-    font-family: "Poppins", sans-serif;
+    font-family: 'Tommy Regular Personal';
     background-color: #84AEFA;
     
 }
@@ -89,7 +109,7 @@ header ul a {
     text-transform: uppercase;
     color: #fff;
     
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Tommy Light Personal';
     pointer-events: auto;
 }
 .text h2{
@@ -129,7 +149,7 @@ header ul a {
     align-items: center;
     
     padding: 20px;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Tommy Medium Personal';
     
 }
 
