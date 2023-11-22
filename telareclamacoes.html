@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/stylereclamacoes.css">
+
+</head>
+<body class="menu-open">
+
+        <!----------------------------------TELA RECLAMAÇÕES---------------------------------------------->
+
+        <!----------------------------------CABEÇALHO---------------------------------------------->
+
+        <div id="header">
+        <button class="btnmenu" onclick="toggleMenu()">
+            <img src="./imagens/icone-menu.png" class="icone-menu botao-menu">
+        </button>
+            <img src="./imagens/logo2.png" class="icone-logo">
+        </div>
+
+        <!----------------------------------MENU SUSPENSO---------------------------------------------->
+
+        <div id="menu">
+            <a href="telamenu.html" class="btntelas"><img src="./imagens/icone-menu2.png">Menu</a>
+            <a href="telareclamacoes.html" class="btntelas"><img src="./imagens/reclamacoes.png">Reclamações</a>
+            <a href="#" class="btntelas"><img src="./imagens/sugestoes.png">Sugestões</a>
+            <a href="telaavaliacoes.html" class="btntelas"><img src="./imagens/avaliacao.png">Avaliações</a>
+            <a href="telacalendario.html" class="btntelas"><img src="./imagens/calendario.png">Calendário de eventos</a>
+            <a href="#" class="btntelas"><img src="./imagens/perfil.png">Perfil</a>
+            <a href="#" class="btntelas"><img src="./imagens/membros.png">Lista de membros</a>
+            <a href="#" class="btntelas"><img src="./imagens/enquete.png">Enquetes</a>
+            <a href="#" class="btntelas"><img src="./imagens/configuracoes.png">Configurações</a>
+            <a href="#" class="btntelas"><img src="./imagens/suporte.png">Suporte ao usuário</a>
+        </div>
+
+        <!----------------------------------LOGO------------------------------------------------>
+
+        <div id="content-wrapper">
+            <img src ="imagens/logo.png">
+
+        <!----------------------------------TÍTULO DA RECLAMAÇÃO---------------------------------------------->
+        <div id="content">
+        <form action="./php/reclamacoes.php" method="post" enctype="multipart/form-data">
+            <div class="input-container">
+            <label for="titulo1" class="label-cabecalho label-titulo1">Reclamações</label>
+            <label for="titulo2" class="label-reclamacao label-titulo2">Título:</label>
+            <input type="text" name="titulo" class="form-input-title" required><br>
+    
+        <!----------------------------------OPÇÕES TIPO---------------------------------------------->
+
+        <label for="tipo" class="label-reclamacao label-tipo">Tipo de ocorrência:</label>
+        <div class="opcoes">
+        <div>
+            <label>
+            <input type="radio" name="tipo" value="urgente" >
+            <span class="label-opcao label-urgente">Urgente</span>
+            </label>
+            <label>
+            <input type="radio" name="tipo" value="importante">
+            <span class="label-opcao label-importante">Importante</span>
+            </label>
+        </div>
+        </div>
+    
+        <!----------------------------------OPÇÕES ÁREA---------------------------------------------->
+
+        <label for="tipo" class="label-reclamacao label-area">Área da ocorrência:</label>
+        <div class="opcoes">
+        <div>    
+            <label>
+            <input type="radio" name="area" value="interna">
+            <span class="label-opcao2 label-interna">Interna</span>
+            </label>
+            <label>
+            <input type="radio" name="area" value="externa">
+            <span class="label-opcao2 label-externa">Externa</span>
+            </label>
+        </div>
+        </div>
+                    
+        <!----------------------------------CAIXA DE TEXTO DESCRIÇÃO---------------------------------------------->
+
+            <label for="story" class="label-reclamacao label-descricao">Descreva melhor a situação (opcional):</label>
+            <textarea id="descricao" name="descricao" class="form-input-desc"></textarea><br>
+        </div>
+ 
+            
+        <!----------------------------------BOTAO ENVIAR---------------------------------------------->
+
+        <button class="custom-btn btn1" type="submit">Enviar
+        <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+        </div>
+        </button></a>
+        </form>   
+        </div>
+
+        <!----------------------------------CAIXA DE OBSERVAÇÃO---------------------------------------------->
+
+        <div id="content2">
+            <span class="label-observacao">Observação: apenas marcar a opção urgente para reclamações que precisam obrigatoriamente ser respondidas e solucionadas no mesmo dia.</span>
+        </div>
+
+        </div>
+        <script>
+var menu = document.getElementById("menu");
+var contentWrapper = document.getElementById("content-wrapper");
+
+function toggleMenu() {
+    document.body.classList.toggle("menu-open");
+
+    if (window.innerWidth < 800) {
+        if (menu.style.width === "100%") {
+            menu.style.width = "0";
+            contentWrapper.style.display = "flex";
+        } else {
+            menu.style.width = "100%";
+            contentWrapper.style.display = "none";
+        }
+    } else {
+        if (menu.style.width === "200px") {
+            menu.style.width = "0";
+        } else {
+            menu.style.width = "200px";
+        }
+    }
+}
+
+window.onresize = function() {
+    if (window.innerWidth < 800 && menu.style.width === "200px") {
+        menu.style.width = "0";
+        contentWrapper.style.display = "flex";
+    } else if (window.innerWidth >= 800) {
+        menu.style.width = "0";
+        contentWrapper.style.display = "flex";
+    }
+};
+
+// Adiciona um evento de clique para cada item do menu
+var menuItems = document.querySelectorAll("#menu a");
+menuItems.forEach(function(item) {
+    item.addEventListener("click", function() {
+        if (window.innerWidth < 800) {
+            toggleMenu();
+        }
+    });
+});
+// Verifica a largura da tela ao carregar a página
+window.onload = function() {
+    if (window.innerWidth < 800) {
+        menu.style.width = "0";
+        contentWrapper.style.display = "flex";
+    }
+};
+                    </script>
+</body>
+</html>
