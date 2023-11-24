@@ -464,6 +464,9 @@ img{
       place-items: center;
 
     }
+    #content2{
+
+    }
     }
 
     @media screen and (max-width: 340px) {
