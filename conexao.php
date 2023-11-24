@@ -1,10 +1,10 @@
 <?php
 
 // Inicio da conexão com o banco de dados utilizando PDO
-$host = "127.0.0.1:3306";
-$user = "u501157063_usersgc";
-$pass = "Tccsgc2023@";
-$dbname = "u501157063_sgc";
+$host = "localhost";
+$user = "root";
+$pass = "";
+$dbname = "sgc";
 $port = 3306;
 
 try {
