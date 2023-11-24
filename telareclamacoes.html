@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/stylereclamacoes.css">
-
 </head>
-<body class="menu-open">
+<body>
 
         <!----------------------------------TELA RECLAMAÇÕES---------------------------------------------->
 
@@ -26,14 +25,15 @@
         <div id="menu">
             <a href="telamenu.html" class="btntelas"><img src="./imagens/icone-menu2.png">Menu</a>
             <a href="telareclamacoes.html" class="btntelas"><img src="./imagens/reclamacoes.png">Reclamações</a>
-            <a href="#" class="btntelas"><img src="./imagens/sugestoes.png">Sugestões</a>
+            <a href="telasugestoes.html" class="btntelas"><img src="./imagens/sugestoes.png">Sugestões</a>
             <a href="telaavaliacoes.html" class="btntelas"><img src="./imagens/avaliacao.png">Avaliações</a>
             <a href="telacalendario.html" class="btntelas"><img src="./imagens/calendario.png">Calendário de eventos</a>
-            <a href="#" class="btntelas"><img src="./imagens/perfil.png">Perfil</a>
+            <a href="#" class="btntelas"><img src="./imagens/devolutiva.png">Devolutivas</a>
+            <a href="#" class="btntelas"><img src="./imagens/reservas.png">Reservas</a>
+            <a href="#" class="btntelas"><img src="./imagens/documentos.png">Documentos</a>
+            <a href="telaperfil.html" class="btntelas"><img src="./imagens/perfil.png">Perfil</a>
             <a href="#" class="btntelas"><img src="./imagens/membros.png">Lista de membros</a>
-            <a href="#" class="btntelas"><img src="./imagens/enquete.png">Enquetes</a>
-            <a href="#" class="btntelas"><img src="./imagens/configuracoes.png">Configurações</a>
-            <a href="#" class="btntelas"><img src="./imagens/suporte.png">Suporte ao usuário</a>
+            <a href="telaconfiguracoes.html" class="btntelas"><img src="./imagens/configuracoes.png">Configurações e suporte</a>
         </div>
 
         <!----------------------------------LOGO------------------------------------------------>
@@ -106,7 +106,7 @@
 
         </div>
         <script>
-var menu = document.getElementById("menu");
+       var menu = document.getElementById("menu");
 var contentWrapper = document.getElementById("content-wrapper");
 
 function toggleMenu() {
@@ -148,13 +148,7 @@ menuItems.forEach(function(item) {
         }
     });
 });
-// Verifica a largura da tela ao carregar a página
-window.onload = function() {
-    if (window.innerWidth < 800) {
-        menu.style.width = "0";
-        contentWrapper.style.display = "flex";
-    }
-};
-                    </script>
+
+        </script>
 </body>
 </html>
