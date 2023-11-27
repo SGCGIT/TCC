@@ -2,35 +2,35 @@
 include_once("./controles-condominos/verifica-sessao-condomino.php");
 include_once('../controles-comuns/conecta-banco.php');
 
-$stmt = $conn->prepare("SELECT CONDOMINIO.NOME AS NOME_CONDOMINIO FROM MORADORES JOIN CONDOMINIO ON MORADORES.CONDOMINIO = CONDOMINIO.idCONDOMINIO WHERE MORADORES.EMAIL = ?");
-$stmt->bind_param("s", $_SESSION["email"]);
-$stmt->execute();
-$stmt->bind_result($nomeCondominio);
-$stmt->fetch();
-$stmt->close();
+// $stmt = $conn->prepare("SELECT CONDOMINIO.NOME AS NOME_CONDOMINIO FROM MORADORES JOIN CONDOMINIO ON MORADORES.CONDOMINIO = CONDOMINIO.idCONDOMINIO WHERE MORADORES.EMAIL = ?");
+// $stmt->bind_param("s", $_SESSION["email"]);
+// $stmt->execute();
+// $stmt->bind_result($nomeCondominio);
+// $stmt->fetch();
+// $stmt->close();
 
-$stmt2 = $conn->prepare("SELECT TRIM(SUBSTRING_INDEX(nome, ' ', 1)) AS primeiro_nome FROM MORADORES WHERE EMAIL = ?");
-$stmt2->bind_param("s", $_SESSION["email"]);
-$stmt2->execute();
-$stmt2->bind_result($primeiroNome);
-$stmt2->fetch();
-$stmt2->close();
+// $stmt2 = $conn->prepare("SELECT TRIM(SUBSTRING_INDEX(nome, ' ', 1)) AS primeiro_nome FROM MORADORES WHERE EMAIL = ?");
+// $stmt2->bind_param("s", $_SESSION["email"]);
+// $stmt2->execute();
+// $stmt2->bind_result($primeiroNome);
+// $stmt2->fetch();
+// $stmt2->close();
 
-$stmt3 = $conn->prepare("SELECT EMAIL FROM MORADORES WHERE EMAIL = ?");
-$stmt3->bind_param("s", $_SESSION["email"]);
-$stmt3->execute();
-$stmt3->bind_result($email);
-$stmt3->fetch();
-$stmt3->close();
+// $stmt3 = $conn->prepare("SELECT EMAIL FROM MORADORES WHERE EMAIL = ?");
+// $stmt3->bind_param("s", $_SESSION["email"]);
+// $stmt3->execute();
+// $stmt3->bind_result($email);
+// $stmt3->fetch();
+// $stmt3->close();
 
-$stmt4 = $conn->prepare("SELECT CONDOMINIO.IMAGEM AS IMAGEM_CONDOMINIO FROM MORADORES JOIN CONDOMINIO ON MORADORES.CONDOMINIO = CONDOMINIO.idCONDOMINIO WHERE MORADORES.EMAIL = ?");
-$stmt4->bind_param("s", $_SESSION["email"]);
-$stmt4->execute();
-$stmt4->bind_result($imagem);
-$stmt4->fetch();
-$stmt4->close();
+// $stmt4 = $conn->prepare("SELECT CONDOMINIO.IMAGEM AS IMAGEM_CONDOMINIO FROM MORADORES JOIN CONDOMINIO ON MORADORES.CONDOMINIO = CONDOMINIO.idCONDOMINIO WHERE MORADORES.EMAIL = ?");
+// $stmt4->bind_param("s", $_SESSION["email"]);
+// $stmt4->execute();
+// $stmt4->bind_result($imagem);
+// $stmt4->fetch();
+// $stmt4->close();
 
-$conn->close();
+// $conn->close();
 ?>
 
 <!DOCTYPE html>

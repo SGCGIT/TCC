@@ -48,7 +48,7 @@ if (!isset($_SESSION['usuario-se-cadastrando'])) {
                         <select name="cnpjCondominio" class="form-control">
                             <?php
                             include_once('../controles-comuns/conecta-banco.php');
-                            $sql = "SELECT * FROM CONDOMINIOS";
+                            $sql = "SELECT CNPJ, NOME FROM CONDOMINIOS";
                             $res = $conn->query($sql);
 
                             // Verifique se a consulta foi bem-sucedida
@@ -58,7 +58,7 @@ if (!isset($_SESSION['usuario-se-cadastrando'])) {
 
                             // Imprima as opções
                             while ($row = $res->fetch_object()) {
-                                echo "<option value='" . $row->CNPJ_CONDOMINIO . "'>" . $row->NOME . "</option>";
+                                echo "<option value='" . $row->CNPJ . "'>" . $row->NOME . "</option>";
                             }
 
                             // Feche a conexão

@@ -3,12 +3,12 @@ include_once("./verifica-sessao-condomino.php");
 include_once("../../controles-comuns/conecta-banco.php");
 
 $titulo = $_POST["titulo"];
-$descricao = $_POST["descricao"];
+$prioridade = $_POST["prioridade"];
 $area = $_POST["area"];
-$tipo = $_POST["tipo"];
+$descricao = $_POST["descricao"];
 
-$stmt = $conn->prepare("INSERT INTO RECLAMACOES (TITULO, TIPO, AREA, DESCRICAO, AUTOR) VALUES (?, ?, ?, ?, ?)");
-$stmt->bind_param("sssss", $titulo, $tipo, $area, $descricao, $_SESSION['email']);
+$stmt = $conn->prepare("INSERT INTO RECLAMACOES (TITULO, PRIORIDADE, AREA, DESCRICAO, AUTOR, CNPJ_CONDOMINIO) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssss", $titulo, $prioridade, $area, $descricao, $_SESSION['email'], $_SESSION['cnpj']);
 
 if ($stmt->execute()) {
     header("Location: ../tela-sucesso-reclamacao.php");

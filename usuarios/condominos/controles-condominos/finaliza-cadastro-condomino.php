@@ -11,6 +11,9 @@ if (!isset($_SESSION['usuario-se-cadastrando'])) {
 include_once("../../controles-comuns/conecta-banco.php");
 
 $condominio = $_POST['cnpjCondominio'];
+
+echo "<script> alert('$condominio') </script>";
+
 $sql = $conn->prepare("INSERT INTO MORADORES_PENDENTES (EMAIL, SENHA, NOME, CARGO, CNPJ_CONDOMINIO) VALUES (?, ?, ?, ?, ?)");
 
 if ($sql) {

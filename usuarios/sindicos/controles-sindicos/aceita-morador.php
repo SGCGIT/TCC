@@ -14,12 +14,12 @@ if (isset($_GET['email'])) {
         $userData = mysqli_fetch_assoc($result);
 
         // Consulta para inserir o registro na tabela de destino
-        $insertQuery = "INSERT INTO MORADORES (EMAIL, SENHA, NOME, CARGO, CONDOMINIO) VALUES (
+        $insertQuery = "INSERT INTO MORADORES (EMAIL, SENHA, NOME, CARGO, CNPJ_CONDOMINIO) VALUES (
                         '" . $userData['EMAIL'] . "',
                         '" . $userData['SENHA'] . "',
                         '" . $userData['NOME'] . "',
                         '" . $userData['CARGO'] . "',
-                        '" . $userData['CONDOMINIO'] . "')";
+                        '" . $userData['CNPJ_CONDOMINIO'] . "')";
 
         if (mysqli_query($conn, $insertQuery)) {
             // Registro inserido com sucesso na tabela de destino

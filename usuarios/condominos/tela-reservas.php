@@ -55,7 +55,8 @@ include_once("./controles-condominos/verifica-sessao-condomino.php");
                     <label for="titulo1" class="label-cabecalho label-titulo1">Reserva
                     </label>
                     <label for="titulo2" class="label-reserva label-titulo2">Título:</label>
-                    <input type="text" name="titulo" class="form-input-title" required><br>
+                    <input type="date" name="titulo" class="form-input-title" required><br>
+                     <input type="time" name="titulo" class="form-input-title" required><br>
                 </div>
 
                 <!----------------------------------BOTAO ENVIAR---------------------------------------------->

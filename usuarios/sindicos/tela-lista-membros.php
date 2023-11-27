@@ -14,6 +14,36 @@ include_once("./controles-sindicos/verifica-sessao-sindico.php");
 </head>
 
 <body>
+    <style>
+    /* Adicione esta regra ao seu estilo CSS existente */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+        background-color: #f2f2f2;
+    }
+    
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+    
+    caption {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+
+</style>
 
     <!----------------------------------TELA RECLAMAÇÕES---------------------------------------------->
 
@@ -53,18 +83,21 @@ include_once("./controles-sindicos/verifica-sessao-sindico.php");
             <div class="input-container">
                 <label for="titulo1" class="label-cabecalho label-titulo1">Membros do condomínio</label>
                 <?php
+                session_start();
                 include_once("../controles-comuns/conecta-banco.php");
 
-                $sql = "SELECT NOME FROM MORADORES";
-
-                $result = $conn->query($sql);
+                $sql = "SELECT NOME, EMAIL FROM MORADORES WHERE CNPJ_CONDOMINIO = ?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("s", $_SESSION['cnpj']);
+                $stmt->execute();
+                $result = $stmt->get_result();
                 ?>
-
-                <div class="m-5">
-                    <table class="table text-black">
+                
+                    <table class="">
                         <thead>
                             <tr>
                                 <th scope="col">Nome</th>
+                                <th scope="col">Email</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -72,13 +105,12 @@ include_once("./controles-sindicos/verifica-sessao-sindico.php");
                             while ($user_data = mysqli_fetch_assoc($result)) {
                                 echo "<tr>";
                                 echo "<td>" . $user_data['NOME'] . "</td>";
+                                echo "<td>" . $user_data['EMAIL'] . "</td>";
                                 echo "</tr>";
                             }
                             ?>
                         </tbody>
-
                     </table>
-                </div>
             </div>
         </div>
 

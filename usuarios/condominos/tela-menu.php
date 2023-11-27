@@ -2,8 +2,15 @@
 include_once("./controles-condominos/verifica-sessao-condomino.php");
 include_once('../controles-comuns/conecta-banco.php');
 
-$stmt = $conn->prepare("SELECT CONDOMINIO.NOME AS NOME_CONDOMINIO FROM MORADORES JOIN CONDOMINIO ON MORADORES.CONDOMINIO = CONDOMINIO.idCONDOMINIO WHERE MORADORES.EMAIL = ?");
+$stmt = $conn->prepare("SELECT CNPJ_CONDOMINIO FROM MORADORES WHERE EMAIL = ?");
 $stmt->bind_param("s", $_SESSION["email"]);
+$stmt->execute();
+$stmt->bind_result($_SESSION['cnpj']);
+$stmt->fetch();
+$stmt->close();
+
+$stmt = $conn->prepare("SELECT NOME FROM CONDOMINIOS WHERE CNPJ = ?");
+$stmt->bind_param("s", $_SESSION["cnpj"]);
 $stmt->execute();
 $stmt->bind_result($nomeCondominio);
 $stmt->fetch();

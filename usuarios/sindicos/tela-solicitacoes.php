@@ -11,11 +11,38 @@ include_once("./controles-sindicos/verifica-sessao-sindico.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../css/stylessolicitacoesSINDICO.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
+    
+    <style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #FFFFFF;
+}
+
+tr:hover {
+    background-color: transparent !important;
+}
+
+caption {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+</style>
 
     <!----------------------------------TELA RECLAMAÇÕES---------------------------------------------->
 
@@ -58,16 +85,15 @@ include_once("./controles-sindicos/verifica-sessao-sindico.php");
                 <?php
                 include_once("../controles-comuns/conecta-banco.php");
 
-                $sql = "SELECT * FROM MORADORES_PENDENTES WHERE CNPJ_CONDOMINIO = ?";
+                $sql = "SELECT NOME, EMAIL FROM MORADORES_PENDENTES WHERE CNPJ_CONDOMINIO = ?";
                 $stmt = $conn->prepare($sql);
-
                 $stmt->bind_param("s", $_SESSION['cnpj']);
                 $stmt->execute();
-
                 $result = $stmt->get_result();
+
                 ?>
 
-                <div class="m-5">
+                <div class="">
                     <table class="table text-black">
                         <thead>
                             <tr>
@@ -85,7 +111,7 @@ include_once("./controles-sindicos/verifica-sessao-sindico.php");
                                 echo "<td>" . $user_data['EMAIL'] . "</td>";
 
                                 echo "<td>
-                                        <a class='btn btn-sm btn-primary' href='./controles-sindicos/recusa-morador.php?email=" . urlencode($user_data['EMAIL']) . "'>
+                                        <a class='teste' href='./controles-sindicos/recusa-morador.php?email=" . urlencode($user_data['EMAIL']) . "'>
                                             <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-x-lg' viewBox='0 0 16 16'>
                                             <path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z'/>
                                       </svg>

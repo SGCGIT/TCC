@@ -79,6 +79,9 @@ $conn->close();
                 <label for="mensagem" class="label-conteudo label-conteudo1">Condomínio:
                     <?php echo $nomeCondominio; ?>
                 </label>
+                <label for="mensagem" class="label-conteudo label-conteudo1">CNPJ:
+                    <?php echo $_SESSION['cnpj']; ?>
+                </label>
 
             </div>
             <div id="content2">

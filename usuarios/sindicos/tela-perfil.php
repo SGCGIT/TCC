@@ -2,33 +2,19 @@
 include_once("./controles-sindicos/verifica-sessao-sindico.php");
 include_once('../controles-comuns/conecta-banco.php');
 
-$stmt = $conn->prepare("SELECT CONDOMINIO.NOME AS NOME_CONDOMINIO FROM MORADORES JOIN CONDOMINIO ON MORADORES.CONDOMINIO = CONDOMINIO.idCONDOMINIO WHERE MORADORES.EMAIL = ?");
-$stmt->bind_param("s", $_SESSION["email"]);
-$stmt->execute();
-$stmt->bind_result($nomeCondominio);
-$stmt->fetch();
-$stmt->close();
+$stmtNome = $conn->prepare("SELECT NOME FROM MORADORES WHERE EMAIL = ?");
+$stmtNome->bind_param("s", $_SESSION["email"]);
+$stmtNome->execute();
+$stmtNome->bind_result($nome);
+$stmtNome->fetch();
+$stmtNome->close();
 
-$stmt2 = $conn->prepare("SELECT TRIM(SUBSTRING_INDEX(nome, ' ', 1)) AS primeiro_nome FROM MORADORES WHERE EMAIL = ?");
-$stmt2->bind_param("s", $_SESSION["email"]);
-$stmt2->execute();
-$stmt2->bind_result($primeiroNome);
-$stmt2->fetch();
-$stmt2->close();
-
-$stmt3 = $conn->prepare("SELECT EMAIL FROM MORADORES WHERE EMAIL = ?");
-$stmt3->bind_param("s", $_SESSION["email"]);
-$stmt3->execute();
-$stmt3->bind_result($email);
-$stmt3->fetch();
-$stmt3->close();
-
-$stmt4 = $conn->prepare("SELECT CONDOMINIO.IMAGEM AS IMAGEM_CONDOMINIO FROM MORADORES JOIN CONDOMINIO ON MORADORES.CONDOMINIO = CONDOMINIO.idCONDOMINIO WHERE MORADORES.EMAIL = ?");
-$stmt4->bind_param("s", $_SESSION["email"]);
-$stmt4->execute();
-$stmt4->bind_result($imagem);
-$stmt4->fetch();
-$stmt4->close();
+$stmtNomeCondominio = $conn->prepare("SELECT NOME FROM CONDOMINIOS WHERE CNPJ = ?");
+$stmtNomeCondominio->bind_param("s", $_SESSION["cnpj"]);
+$stmtNomeCondominio->execute();
+$stmtNomeCondominio->bind_result($nomeCondominio);
+$stmtNomeCondominio->fetch();
+$stmtNomeCondominio->close();
 
 $conn->close();
 ?>
@@ -85,24 +71,14 @@ $conn->close();
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="input-container">
                     <label for="titulo1" class="label-cabecalho label-titulo1">Perfil de usuário</label>
-                    <label for="titulo2" class="label-reclamacao label-titulo2">Informações:</label>
-                    <label for="titulo2" class="label-reclamacao label-titulo2">nome:
-                         <?php echo $primeiroNome; ?>
+                    <label for="titulo2" class="label-reclamacao label-titulo2">Nome:
+                         <?php echo $nome; ?>
                          </label><br>
-                         <label for="titulo2" class="label-reclamacao label-titulo2">emai:
-                         <?php echo $email; ?>
+                         <label for="titulo2" class="label-reclamacao label-titulo2">Email:
+                         <?php echo $_SESSION['email']; ?>
                          </label><br>
-                         <label for="titulo2" class="label-reclamacao label-titulo2">condominio:
+                         <label for="titulo2" class="label-reclamacao label-titulo2">Condominio:
                          <?php echo $nomeCondominio; ?><br>
-                         <?php
-                         if (!empty('IMAGEM')) {
-                         $largura = 150;  
-                         $altura = 150;
-                         echo "<li>Imagem: <img src='" . htmlspecialchars('IMAGEM') . "' width='" . $largura . "' height='" . $altura .  "' alt=''></li>";
-                         } else {
-                             echo 'Imagem não encontrada!';
-                         }
-                         ?>
                 </div>
         </div>
         <script>

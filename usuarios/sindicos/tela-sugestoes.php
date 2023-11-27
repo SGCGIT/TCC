@@ -14,6 +14,35 @@ include_once("./controles-sindicos/verifica-sessao-sindico.php");
 </head>
 
 <body>
+    
+    <style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #FFFFFF;
+}
+
+tr:hover {
+    background-color: transparent !important;
+}
+
+caption {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+</style>
 
     <!----------------------------------TELA RECLAMAÇÕES---------------------------------------------->
 
@@ -54,14 +83,17 @@ include_once("./controles-sindicos/verifica-sessao-sindico.php");
             <div class="input-container">
                 <label for="titulo1" class="label-cabecalho label-titulo1">Sugestões</label>
                 <?php
+                session_start();
                 include_once("../controles-comuns/conecta-banco.php");
 
-                $sql = "SELECT TITULO, AUTOR FROM SUGESTOES";
-
-                $result = $conn->query($sql);
+                $sql = "SELECT TITULO, AUTOR FROM SUGESTOES WHERE CNPJ_CONDOMINIO = ?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("s", $_SESSION['cnpj']);
+                $stmt->execute();
+                $result = $stmt->get_result();
                 ?>
 
-                <div class="m-5">
+                <div class="">
                     <table class="table text-black">
                         <thead>
                             <tr>
@@ -79,7 +111,6 @@ include_once("./controles-sindicos/verifica-sessao-sindico.php");
                             }
                             ?>
                         </tbody>
-
                     </table>
                 </div>
             </div>

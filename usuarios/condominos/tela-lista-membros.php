@@ -52,25 +52,37 @@ include_once("./controles-condominos/verifica-sessao-condomino.php");
         <div id="content">
             <div class="input-container">
                 <label for="titulo1" class="label-cabecalho label-titulo1">Membros do condomínio</label>
+                <?php
+                session_start();
+                include_once("../controles-comuns/conecta-banco.php");
+
+                $sql = "SELECT NOME, EMAIL FROM MORADORES WHERE CNPJ_CONDOMINIO = ?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("s", $_SESSION['cnpj']);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                ?>
+
+                <div class="m-5">
+                    <table class="table text-black">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            while ($user_data = mysqli_fetch_assoc($result)) {
+                                echo "<tr>";
+                                echo "<td>" . $user_data['NOME'] . "</td>";
+                                echo "</tr>";
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div>
-                <?php
-                include_once('../controles-comuns/conecta-banco.php');
-
-                $sql = "SELECT * FROM MORADORES";
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    echo "<h2>Reclamações feitas pelos moradores</h2>";
-                    echo "<ul>";
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<li>Nome: " . $row['NOME'] ." </li>";
-                    }
-                    echo "</ul>";
-                } else {
-                    echo "Nenhuma reclamação feita.";
-                }
-                ?>
 
             </div>
         </div>

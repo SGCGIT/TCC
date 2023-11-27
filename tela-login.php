@@ -41,9 +41,10 @@ $mensagem = isset($_GET['mensagem']) ? urldecode($_GET['mensagem']) : '';
                             required>
                         <p class="label-infos-usuarios">Senha <span class="form-dados-obrigatorio">*</span></p>
                         <input type="password" name="senha" id="senha" class="form-input-text" required>
-                        <p class="mensagem">
+                        <br>
+                        <span class="mensagem">
                             <?php echo $mensagem; ?>
-                        </p>
+                        </span>
 
                         <!----------------------------------BOTÃO VOLTAR--------------------------------------------->
 

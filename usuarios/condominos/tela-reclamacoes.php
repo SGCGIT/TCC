@@ -58,15 +58,15 @@ include_once("./controles-condominos/verifica-sessao-condomino.php");
 
                     <!----------------------------------OPÇÕES TIPO---------------------------------------------->
 
-                    <label for="tipo" class="label-reclamacao label-tipo">Tipo de ocorrência:</label>
+                    <label for="prioridade" class="label-reclamacao label-prioridade">Tipo de ocorrência:</label>
                     <div class="opcoes">
                         <div>
                             <label>
-                                <input type="radio" name="tipo" value="urgente" required>
+                                <input type="radio" name="prioridade" value="urgente" required>
                                 <span class="label-opcao label-urgente">Urgente</span>
                             </label>
                             <label>
-                                <input type="radio" name="tipo" value="importante" required>
+                                <input type="radio" name="prioridade" value="importante" required>
                                 <span class="label-opcao label-importante">Importante</span>
                             </label>
                         </div>
@@ -74,7 +74,7 @@ include_once("./controles-condominos/verifica-sessao-condomino.php");
 
                     <!----------------------------------OPÇÕES ÁREA---------------------------------------------->
 
-                    <label for="tipo" class="label-reclamacao label-area">Área da ocorrência:</label>
+                    <label for="area" class="label-reclamacao label-area">Área da ocorrência:</label>
                     <div class="opcoes">
                         <div>
                             <label>
