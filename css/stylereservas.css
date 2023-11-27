@@ -212,70 +212,34 @@ img{
     font-size: 3rem;
 }
 
-.label-titulo2{
-    font-family: 'Tommy Regular Personal';
-    color: white;
+.label-campo{
+  font-family: 'Tommy Regular Personal';
+  color: white;
+  font-size: 1.3rem;
+  margin-left: 5%;
+}
+
+.label-selecionar {
+  font-family: 'Tommy Regular Personal';
+  color: white;
+  margin-bottom:10px; /* Espaço entre a label e a caixa de texto ou opções */
+  margin-top: 20px; /* Espaço entre a label e a caixa de texto ou opções */
+  font-size: 1.3rem;
+}
+
+
+/*-----------------DROPBOX EVENTOS-----------------------*/
+
+.form-control{
+    width: 60%;
+    height: 50px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border-color: #202855;
     font-size: 1.3rem;
+    text-align: left;
+    margin-bottom: 2%;
     margin-left: 5%;
-}
-
-.label-tipo{
-    font-family: 'Tommy Regular Personal';
-    color: white;
-    font-size: 1.3rem;
-    margin-bottom: 0.5%;
-    margin-left: 5%;
-}
-
-.label-area{
-    font-family: 'Tommy Regular Personal';
-    color: white;
-    font-size: 1.3rem;
-    margin-bottom: 0.5%;
-    margin-left: 5%;
-}
-
-.label-descricao{
-    font-family: 'Tommy Regular Personal';
-    color: white;
-    font-size: 1.3rem;
-    margin-left: 5%;
-}
-
-.label-observacao{
-    font-family: 'Tommy Regular Personal';
-    color: #4b5fd4;
-    font-size: 1.3rem;
-    margin-left: 5%;
-    margin-top: 5%;
-    margin-right: 5%;
-}
-
-/*-----------------TEXTO OPCOES-----------------------*/
-
-.opcoes{
-    padding-bottom: 2rem;
-}
-
-
-.label-opcao{
-    text-align: center;
-    font-size: 1.3rem;
-    font-family: 'Tommy Regular Personal';   
-    color:#4b5fd4;
-}
-
-.label-opcao2{
-    text-align: center;
-    font-size: 1.3rem;
-    font-family: 'Tommy Regular Personal';   
-    color:#4b5fd4;
-    margin-bottom: 20%;
-}
-
-.label-opcao:hover{
-    background-color: #202855;
-    color:white;
 }
 
 
@@ -305,137 +269,4 @@ img{
     margin-top: 1%;
     margin-left: 5%;
 }
-
-/*-----------------OPCAO-----------------------*/
-
-:focus {
-    outline: 0;
-    border-color: #2260ff;
-    box-shadow: 0 0 0 4px #b5c9fc;
-  }
-  
-.opcoes div {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 0.5rem;
-    margin-left: 5%;
-  }
-  
-  .opcoes input[type="radio"] {
-    clip: rect(0 0 0 0);
-    clip-path: inset(100%);
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
-  
-  .opcoes input[type="radio"]:checked + span {
-    box-shadow: 0 0 0 0.0625em white;
-    background-color: #202855;
-    z-index: 1;
-    color: white;
-  }
-  
-  label span {
-    display: block;
-    cursor: pointer;
-    background-color: #fff;
-    padding: 0.375em .75em;
-    position: relative;
-    margin-left: .0625em;
-    box-shadow: 0 0 0 0.0625em #b5bfd9;
-    letter-spacing: .05em;
-    color: #3e4963;
-    text-align: center;
-    transition: background-color .5s ease;
-  }
-  
-  label:first-child span {
-    border-radius: .375em 0 0 .375em;
-  }
-  
-  label:last-child span {
-    border-radius: 0 .375em .375em 0;
-  }
-
-/*-----------------BOTÃO-----------------------*/
-
-.buttons-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .custom-btn {
-      background: white;
-      color: #4b5fd4;
-      font-family: 'Tommy Regular Personal';
-      padding: 0.35em;
-      padding-left: 1.2em;
-      font-size: 1.3rem;
-      font-weight: 500;
-      border-radius: 0.9em;
-      border: none;
-      letter-spacing: 0.05em;
-      display: flex;
-      align-items: center;
-      box-shadow: inset 0 0 1.6em -0.6em white;
-      overflow: hidden;
-      position: relative;
-      height: 2.8em;
-      padding-right: 3.3em;
-      margin-bottom: 3%;
-      margin-top: 1%;  
-      margin-left: 5%;
-    }
-    
-    .custom-btn .icon {
-      background-color: #4b5fd4;
-      margin-left: 1em;
-      position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 2.2em;
-      width: 2.2em;
-      border-radius: 0.7em;
-      box-shadow: 0.1em 0.1em 0.6em 0.2em white;
-      right: 0.3em;
-      transition: all 0.3s;
-     
-    }
-    
-    .custom-btn:hover .icon {
-      width: calc(100% - 0.6em);
-    }
-    
-    .custom-btn .icon svg {
-      width: 1.5em; /* Aumenta a largura em 1.5 vezes */
-      height: 1.5em; /* Aumenta a altura em 1.5 vezes */
-      transition: transform 0.3s;
-      color: white;
-      fill: white;
-      
-    }
-    
-    .custom-btn:hover .icon svg {
-      transform: translateX(-0.1em);
-    }
-  
-    custom-btn .btn1:hover .icon svg {
-      transform: translateX(-0.1em);
-    }
-    
-    
-    .custom-btn:active .icon {
-      transform: scale(0.95);
-    }
-  
-  .iconvoltar svg {
-    stroke: white; /* Define a cor do contorno como branco */
-    stroke-width: 50; /* Aumenta a espessura do traço do ícone */
-    fill: white; /* Define a cor de preenchimento como branco (se necessário) */
-  }
-
-
 

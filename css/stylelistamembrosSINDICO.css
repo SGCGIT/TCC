@@ -153,6 +153,50 @@ body {
   background-color: #202855;
 }
 
+/*------------------------MENU 2----------------------------*/
+
+#menu2 {
+    width: 0; /* Alterado para 0 para iniciar fechado */
+    max-height: calc(100% - 60px);
+    background-color: #4b5fd4;
+    position: fixed;
+    top: 58px;
+    right: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: 0.5s;
+    padding-top: 10px;
+    z-index: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    
+.detalhes{
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Tommy Regular Personal';
+  color: #4b5fd4; 
+  background-color: white; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; 
+  transition: 0.3s;
+  border: none;
+  height: 90%;
+  margin: 10px;
+  border-radius: 40px; 
+  width: 100%;
+ 
+}
+
+.btnmenu2{
+  width: 45px; /* Largura desejada */
+    height: 45px; /* Mantém a proporção original da imagem */
+}
+
 /*------------------LOGO HEADER---------------------*/
 
 .icone-logo{
@@ -407,6 +451,5 @@ label:last-child span {
   stroke-width: 50; /* Aumenta a espessura do traço do ícone */
   fill: white; /* Define a cor de preenchimento como branco (se necessário) */
 }
-
 
 

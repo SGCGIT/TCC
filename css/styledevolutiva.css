@@ -20,20 +20,36 @@ body {
     height: 63px; /* Ajuste a altura conforme necessário */
 }
 
-#menu {
+#menu2 {
     width: 0; /* Alterado para 0 para iniciar fechado */
     max-height: calc(100% - 60px);
     background-color: #4b5fd4;
     position: fixed;
     top: 58px;
-    left: 0;
+    right: 0;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     transition: 0.5s;
     padding-top: 10px;
     z-index: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
+#menu {
+  width: 0; /* Alterado para 0 para iniciar fechado */
+  max-height: calc(100% - 60px);
+  background-color: #4b5fd4;
+  position: fixed;
+  top: 58px;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: 0.5s;
+  padding-top: 10px;
+  z-index: 0;
+}
 #menu a {
     padding: 15px; 
     text-decoration: none;
@@ -119,6 +135,10 @@ body {
     align-items: center; /* Centralizar verticalmente */
     border: none; 
 }
+.btnmenu2{
+  width: 45px; /* Largura desejada */
+    height: 45px; /* Mantém a proporção original da imagem */
+}
 
 .icone-menu {
     width: 40px; /* Largura desejada */
@@ -142,6 +162,25 @@ body {
     justify-content: center; /* Centraliza horizontalmente */
     float: none; /* Remova o alinhamento anterior */
     clear: left; /* Certifique-se de que os botões estejam limpos à esquerda */
+}
+.detalhes{
+  
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Tommy Regular Personal';
+  color: #4b5fd4; 
+  background-color: white; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; 
+  transition: 0.3s;
+  border: none;
+  height: 90%;
+  margin: 10px;
+  border-radius: 40px; 
+  width: 100%;
+ 
 }
 
 /* Estilo da barra de rolagem */

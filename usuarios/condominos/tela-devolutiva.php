@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../css/styledevolutiva.css">
+    <link rel="stylesheet" type="text/css" href="../../css/Aresponsividademenu.css">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
     <!----------------------------------CABEÇALHO---------------------------------------------->
 
     <div id="header">
-        <button class="btnmenu" onclick="toggleMenu()">
+    <button class="btnmenu" onclick="toggleMenu()">
             <img src="../../imagens/icone-menu.png" class="icone-menu botao-menu">
         </button>
         <img src="../../imagens/logo2.png" class="icone-logo">
@@ -48,28 +49,41 @@
         <div id="content">
             <div class="input-container">
                 <label for="titulo1" class="label-cabecalho label-titulo1">Devolutivas</label>
+                <button class="btnmenu2" onclick="toggleMenu2()">
+                <a href="#" class="">texto</a>
+        </button>
             </div>
         </div>
 
         <!----------------------------------CAIXA DE OBSERVAÇÃO---------------------------------------------->
-
+        <div id="menu2">
+        <div class="detalhes">ggg</div>
+        
+     
+     
+    </div>
         <div id="content2">
             <span class="label-observacao">Acesse todas as devolutivas sobre suas reclamações, avaliações, sugestões e
                 reservas bem aqui!</span>
         </div>
 
     </div>
+    
+    <script src="../../js/menulateral.js"></script>
+    
+    
     <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
+        function toggleMenu2() {
+            var menu = document.getElementById("menu2");
             var content = document.getElementById("content");
 
-            if (menu.style.width === "200px") {
+            if (menu.style.width === "350px") {
                 menu.style.width = "0";
             } else {
-                menu.style.width = "200px";
+                menu.style.width = "350px";
             }
         }
+        
     </script>
 </body>
 

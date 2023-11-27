@@ -11,6 +11,7 @@ include_once("./controles-condominos/verifica-sessao-condomino.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../css/styleavaliacoes.css">
+    <link rel="stylesheet" type="text/css" href="../../css/Aresponsividademenu.css">
 </head>
 
 <body>
@@ -59,7 +60,26 @@ include_once("./controles-condominos/verifica-sessao-condomino.php");
 
                     <label for="nota" class="label-reclamacao label-evento">Evento:</label>
                     <div class="label-selecionar">
-                        <select name="evento" class="form-control"></select>
+                        <select name="evento" class="form-control">
+                            <?php
+                            include_once('../controles-comuns/conecta-banco.php');
+                            $sql = "SELECT TITULO FROM EVENTOS";
+                            $res = $conn->query($sql);
+
+                            // Verifique se a consulta foi bem-sucedida
+                            if (!$res) {
+                                die("Erro na execução da consulta: " . $conn->error);
+                            }
+
+                            // Imprima as opções
+                            while ($row = $res->fetch_object()) {
+                                echo "<option value='" . $row->idEvent . "'>" . $row->TITULO . "</option>";
+                            }
+
+                            // Feche a conexão
+                            $conn->close();
+                            ?>
+                        </select>
                     </div>
 
                     <!----------------------------------OPÇÕES NOTA---------------------------------------------->
@@ -133,6 +153,8 @@ include_once("./controles-condominos/verifica-sessao-condomino.php");
             }
         }
     </script>
+    
+    <script src="../../js/menulateral.js"></script>
 </body>
 
 </html>

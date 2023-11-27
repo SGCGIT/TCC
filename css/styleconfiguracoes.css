@@ -582,6 +582,147 @@ body {
   }
 
 
+/*------------------RESPONSIVIDADE---------------------*/
 
+@media screen and (max-width: 1600px) {
+  #content-button{
+    margin-top: 50px;
+  }
+  .custom-btn{
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .label-titulo1{
+    font-size: 2.5rem;
+  }
+
+}
+
+  @media screen and (max-width: 900px) {
+
+    .content-container2{
+      flex-wrap: wrap;
+    }
+    #content{
+      width: 100%;
+      max-height: 400px;
+      padding: 0;
+    }
+    #content-text1{
+      justify-content: center;
+      margin-top: 100px;
+      font-size: 2rem;
+    }
+    #content-text2{
+      width: 100%;
+    }
+    #content2{
+      width: 100%;
+    }
+    #content3{
+      width: 100%;
+      margin-right: 1%;
+    }
+    #content-wrapper{
+        
+      flex-direction: column;
+      height: 100vh;
+    }
+    #content-button{
+      margin-top: 0%;
+    }
+    .uiverse{
+      width: 6rem;
+    }
+    .uiverse1{
+      width: 6rem;
+      margin-right: 5%;
+    }
+    .icone-logo{
+      width: 9%;
+      margin-left: 0;
+    }
+    .custom-btn{
+      margin-right: 0;
+    }
+  
+  }
+
+
+  @media screen and (max-height: 700px) {
+    #content-wrapper{
+        
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    #content-button{
+      margin-top: 1rem;
+    }
+    #content-button{
+      margin-top: 5rem;
+    }
+    #content-text1{
+      justify-content: center;
+      margin-top: 70px;
+      font-size: 0.3rem;
+    }
+    .label-titulo1{
+      font-size: 2rem;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .label-titulo1{
+      font-size: 2rem;
+    }
+ 
+  }
+
+  @media screen and (max-width: 290px) {
+    #content-button{
+      margin-top: 3rem;
+    }
+    #content-text1{
+      justify-content: center;
+      margin-top: 50px;
+    
+    }
+    .label-titulo1{
+      font-size: 1.8rem;
+      
+
+      
+    }
+    .label-email{
+      font-size: 1.1rem;
+    }
+    .label-instagram{
+      font-size: 1.1rem;
+    }
+    .uiverse2{
+      width: 100%;
+      margin-left: 0;
+      padding: 0;
+    }
+    #content3{
+      padding: 0rem;
+    }
+  }
+  @media screen and (max-width: 270px) {
+    #content-text1{
+      justify-content: center;
+      margin-top: 70px;
+    
+    }
+  }
+
+  @media screen and (max-width: 230px) {
+    #content-text1{
+      justify-content: center;
+      margin-top: 80px;
+    
+    }
+  }
 
 

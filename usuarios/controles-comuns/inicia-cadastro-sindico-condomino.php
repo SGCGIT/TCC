@@ -29,7 +29,7 @@ $verificarEmail->close();
 // Verifique se o e-mail já existe
 if ($contagem > 0) {
     $mensagem = "O e-mail já está cadastrado. Por favor, escolha outro e-mail.";
-    header('location: ../telacadastro.php?mensagem=' . urlencode($mensagem));
+    header('location: ../tela-cadastro.php?mensagem=' . urlencode($mensagem));
     exit();
 } else {
     if ($_SESSION['cargo'] == 0) {

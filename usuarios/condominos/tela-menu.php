@@ -35,6 +35,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../css/stylemenu.css">
+    <link rel="stylesheet" type="text/css" href="../../css/Aresponsividademenu.css">
 </head>
 
 <body>
@@ -72,41 +73,68 @@ $conn->close();
         <div class="content-container">
             <div id="content">
                 <label for="titulo" class="label-cabecalho label-titulo">Seja bem vindo(a),
-                    <?php echo $primeiroNome; ?>
-                    !
+                    <?php echo $primeiroNome;?>!
                 </label>
+                </label>
+                
+                <div id="containerlabel1">
                 <label for="mensagem" class="label-conteudo label-conteudo1">Condomínio:
                     <?php echo $nomeCondominio; ?>
                 </label>
+                </div>
+                
+                <div id="containerlabel2">
+                <label for="mensagem" class="label-conteudo label-conteudo1">CNPJ:
+                    <?php echo $_SESSION['cnpj']; ?>
+                </label>
+                </div>
+                
+                <div id="containerlabel3">
+                <label for="mensagem" class="label-conteudo label-conteudo1">Número de moradores:
+                    <?php echo $numeroMoradores?>
+                </label>
+                </div>
 
             </div>
             <div id="content2">
+            
+            <div id="content-img">
+                <div class="form-perfil-div">
+                <img src="../../imagens/profile.png" alt="exemplo" class="form-perfil-img" name="imagem"
+                id="preview-ft-perfil">
+            </div>
+                <label for="input-file" class="label-enviar-img">Selecionar imagem</label>
+                <input type="file" name="imagem" accept="image/jpeg, image/png, image/jpg" id="input-file" required>
+            </div>
+
+            <button class="custom-btn btn2" type="submit">Salvar alterações
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path fill="currentColor"
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z">
+                </path>
+                </svg>
+            </div>
+            </button></a>
 
             </div>
         </div>
 
-        <div class="content-container2">
-            <div id="content3">
-
-            </div>
-            <div id="content4">
-
-            </div>
-        </div>
-
+        
     </div>
+    
+    <script src="../../js/menulateral.js"></script>
+    
     <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            var content = document.getElementById("content");
+        let fotoperfil = document.getElementById("preview-ft-perfil");
+        let inputfile = document.getElementById("input-file");
 
-            if (menu.style.width === "200px") {
-                menu.style.width = "0";
-            } else {
-                menu.style.width = "200px";
-            }
+        inputfile.onchange = function () {
+            fotoperfil.src = URL.createObjectURL(inputfile.files[0])
         }
     </script>
+    
 </body>
 
 </html>

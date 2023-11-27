@@ -11,6 +11,7 @@ include_once("./controles-condominos/verifica-sessao-condomino.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../css/stylereservas.css">
+    <link rel="stylesheet" type="text/css" href="../../css/Aresponsividademenu.css">
 </head>
 
 <body>
@@ -54,8 +55,39 @@ include_once("./controles-condominos/verifica-sessao-condomino.php");
                 <div class="input-container">
                     <label for="titulo1" class="label-cabecalho label-titulo1">Reserva
                     </label>
-                    <label for="titulo2" class="label-reserva label-titulo2">Título:</label>
+                    
+                    
+        <!----------------------------------DROPBOX EVENTO---------------------------------------------->
+
+                    <label for="nota" class="label-reserva label-campo">Espaço:</label>
+                    <div class="label-selecionar">
+                        <select name="evento" class="form-control">
+                            <?php
+                            include_once('../controles-comuns/conecta-banco.php');
+                            $sql = "SELECT TITULO FROM EVENTOS";
+                            $res = $conn->query($sql);
+
+                            // Verifique se a consulta foi bem-sucedida
+                            if (!$res) {
+                                die("Erro na execução da consulta: " . $conn->error);
+                            }
+
+                            // Imprima as opções
+                            while ($row = $res->fetch_object()) {
+                                echo "<option value='" . $row->idEvent . "'>" . $row->TITULO . "</option>";
+                            }
+
+                            // Feche a conexão
+                            $conn->close();
+                            ?>
+                        </select>
+                    </div>
+
+                    
+                    
+                    <label for="titulo2" class="label-reserva label-campo">Data</label>
                     <input type="date" name="titulo" class="form-input-title" required><br>
+                    <label for="titulo2" class="label-reserva label-campo">Hora</label>
                      <input type="time" name="titulo" class="form-input-title" required><br>
                 </div>
 
@@ -83,18 +115,7 @@ include_once("./controles-condominos/verifica-sessao-condomino.php");
         </div>
 
     </div>
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            var content = document.getElementById("content");
-
-            if (menu.style.width === "200px") {
-                menu.style.width = "0";
-            } else {
-                menu.style.width = "200px";
-            }
-        }
-    </script>
+    <script src="../../js/menulateral.js"></script>
 </body>
 
 </html>

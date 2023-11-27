@@ -11,9 +11,62 @@ include_once("./controles-condominos/verifica-sessao-condomino.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../css/stylelistamembros.css">
+    <link rel="stylesheet" type="text/css" href="../../css/Aresponsividademenu.css">
 </head>
 
 <body>
+<style>
+  #content {
+    width: 78%;
+    height: 78%;
+    overflow: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+
+    /* Estilizando a barra de rolagem para torná-la invisível em navegadores WebKit */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: transparent transparent; /* Firefox */
+  }
+
+  #content::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  #content::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+  #content::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  /* Adicione esta regra ao seu estilo CSS existente */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    padding: 10px;
+  }
+
+  th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #FFFFFF;
+  }
+
+  tr:hover {
+    background-color: transparent !important;
+  }
+
+  caption {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+</style>
 
     <!----------------------------------TELA RECLAMAÇÕES---------------------------------------------->
 
@@ -56,7 +109,10 @@ include_once("./controles-condominos/verifica-sessao-condomino.php");
                 session_start();
                 include_once("../controles-comuns/conecta-banco.php");
 
-                $sql = "SELECT NOME, EMAIL FROM MORADORES WHERE CNPJ_CONDOMINIO = ?";
+                $sql = "SELECT NOME, EMAIL
+FROM MORADORES
+WHERE CNPJ_CONDOMINIO = ?
+ORDER BY NOME";
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("s", $_SESSION['cnpj']);
                 $stmt->execute();
@@ -95,18 +151,7 @@ include_once("./controles-condominos/verifica-sessao-condomino.php");
         </div>
 
     </div>
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            var content = document.getElementById("content");
-
-            if (menu.style.width === "200px") {
-                menu.style.width = "0";
-            } else {
-                menu.style.width = "200px";
-            }
-        }
-    </script>
+    <script src="../../js/menulateral.js"></script>
 </body>
 
 </html>

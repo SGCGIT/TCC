@@ -11,6 +11,7 @@ include_once("./controles-condominos/verifica-sessao-condomino.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../css/stylesugestoes.css">
+    <link rel="stylesheet" type="text/css" href="../../css/Aresponsividademenu.css">
 </head>
 
 <body>
@@ -89,18 +90,7 @@ include_once("./controles-condominos/verifica-sessao-condomino.php");
         </div>
 
     </div>
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            var content = document.getElementById("content");
-
-            if (menu.style.width === "200px") {
-                menu.style.width = "0";
-            } else {
-                menu.style.width = "200px";
-            }
-        }
-    </script>
+    <script src="../../js/menulateral.js"></script>
 </body>
 
 </html>

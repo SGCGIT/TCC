@@ -2,33 +2,12 @@
 include_once("./controles-condominos/verifica-sessao-condomino.php");
 include_once('../controles-comuns/conecta-banco.php');
 
-// $stmt = $conn->prepare("SELECT CONDOMINIO.NOME AS NOME_CONDOMINIO FROM MORADORES JOIN CONDOMINIO ON MORADORES.CONDOMINIO = CONDOMINIO.idCONDOMINIO WHERE MORADORES.EMAIL = ?");
-// $stmt->bind_param("s", $_SESSION["email"]);
-// $stmt->execute();
-// $stmt->bind_result($nomeCondominio);
-// $stmt->fetch();
-// $stmt->close();
-
-// $stmt2 = $conn->prepare("SELECT TRIM(SUBSTRING_INDEX(nome, ' ', 1)) AS primeiro_nome FROM MORADORES WHERE EMAIL = ?");
-// $stmt2->bind_param("s", $_SESSION["email"]);
-// $stmt2->execute();
-// $stmt2->bind_result($primeiroNome);
-// $stmt2->fetch();
-// $stmt2->close();
-
-// $stmt3 = $conn->prepare("SELECT EMAIL FROM MORADORES WHERE EMAIL = ?");
-// $stmt3->bind_param("s", $_SESSION["email"]);
-// $stmt3->execute();
-// $stmt3->bind_result($email);
-// $stmt3->fetch();
-// $stmt3->close();
-
-// $stmt4 = $conn->prepare("SELECT CONDOMINIO.IMAGEM AS IMAGEM_CONDOMINIO FROM MORADORES JOIN CONDOMINIO ON MORADORES.CONDOMINIO = CONDOMINIO.idCONDOMINIO WHERE MORADORES.EMAIL = ?");
-// $stmt4->bind_param("s", $_SESSION["email"]);
-// $stmt4->execute();
-// $stmt4->bind_result($imagem);
-// $stmt4->fetch();
-// $stmt4->close();
+$stmtNome = $conn->prepare("SELECT NOME FROM MORADORES WHERE EMAIL = ?");
+$stmtNome->bind_param("s", $_SESSION["email"]);
+$stmtNome->execute();
+$stmtNome->bind_result($nome);
+$stmtNome->fetch();
+$stmtNome->close();
 
 // $conn->close();
 ?>
@@ -42,6 +21,7 @@ include_once('../controles-comuns/conecta-banco.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../css/styleperfil.css">
+    <link rel="stylesheet" type="text/css" href="../../css/Aresponsividademenu.css">
 </head>
 
 <body>
@@ -83,39 +63,15 @@ include_once('../controles-comuns/conecta-banco.php');
         <div id="content">
             <div class="input-container">
                 <label for="titulo1" class="label-cabecalho label-titulo1">Perfil de usuário</label>
-                <label for="titulo2" class="label-reclamacao label-titulo2">Informações</label><br>
-                <label for="titulo2" class="label-reclamacao label-titulo2">nome:
-                <?php echo $primeiroNome; ?>
+                <label for="titulo2" class="label-reclamacao label-titulo2">Nome:
+                <?php echo $nome; ?>
                 </label><br>
-                <label for="titulo2" class="label-reclamacao label-titulo2">emai:
-                <?php echo $email; ?>
-                </label><br>
-                <label for="titulo2" class="label-reclamacao label-titulo2">condominio:
-                <?php echo $nomeCondominio; ?><br>
-                <?php
-                if (!empty('IMAGEM')) {
-                $largura = 150;  
-                $altura = 150;
-                echo "<li>Imagem: <img src='" . htmlspecialchars('IMAGEM') . "' width='" . $largura . "' height='" . $altura .  "' alt=''></li>";
-                } else {
-                    echo 'Imagem não encontrada!';
-                }
-                ?>
+                <label for="titulo2" class="label-reclamacao label-titulo2">Email:
+                <?php echo $_SESSION['email']; ?>
                 </label><br>
             </div>
         </div>
-        <script>
-            function toggleMenu() {
-                var menu = document.getElementById("menu");
-                var content = document.getElementById("content");
-
-                if (menu.style.width === "200px") {
-                    menu.style.width = "0";
-                } else {
-                    menu.style.width = "200px";
-                }
-            }
-        </script>
+        <script src="../../js/menulateral.js"></script>
 </body>
 
 </html>

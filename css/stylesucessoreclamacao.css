@@ -310,5 +310,41 @@ img{
     fill: white; /* Define a cor de preenchimento como branco (se necessário) */
   }
 
+/*------------------RESPONSIVIDADE MENU---------------------*/
+
+@media screen and (max-width: 800px) {
+    
+
+  #menu{
+      
+      display: grid;
+      place-items: center;
+     
+      
+      
+  }
+  #menu a {
+    padding: 30px 100px;
+  }
+  }
+
+
+@media screen and (max-width: 340px) {
+    
+
+   
+    #menu a {
+      padding: 15px 50px;
+    }
+
+  }
+
+    @media screen and (max-width: 200px) {
+    #menu a {
+        padding: 7.5px 25px;
+      }
+  
+    }
+
 
 

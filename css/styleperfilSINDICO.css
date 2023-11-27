@@ -93,6 +93,8 @@ body {
     margin-left: 5%;
 }
 
+
+
 /*------------------BOTAO MENU---------------------*/
 
 .btnmenu {
@@ -185,7 +187,7 @@ img{
 }
 
 
-/*------------------TEXTOS RECLAMAÇÕES---------------------*/
+/*------------------TEXTOS PERFIL---------------------*/
 
 .input-container {
     display: flex;
@@ -207,7 +209,4 @@ img{
     font-size: 1.3rem;
     margin-left: 5%;
 }
-
-
-
 

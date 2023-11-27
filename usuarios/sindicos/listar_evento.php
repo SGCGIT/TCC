@@ -31,3 +31,5 @@ while($row_events = $result_events->fetch(PDO::FETCH_ASSOC)){
 }
 
 echo json_encode($eventos);
+
+?>

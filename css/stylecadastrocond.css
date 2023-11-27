@@ -247,3 +247,132 @@ display: none;
     stroke-width: 50; /* Aumenta a espessura do traço do ícone */
     fill: white; /* Define a cor de preenchimento como branco (se necessário) */
   }
+
+  /* Responsividade  ---- NÃO MEXER!*/
+
+  @media screen and  (max-width: 760px){
+    .form-input-text{
+      width: 100%; 
+      max-width: 70rem; /**/
+      padding: 1.5rem;
+      border-radius: 10px;
+      border-color: #202855;
+      font-size: 1.8rem;
+      margin: 10px 0;
+      text-align: left;
+  }
+
+
+  .form {
+
+    max-width: 100%;
+    margin: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    max-height: 100%;
+
+  }
+
+
+
+  .custom-btn {
+    background: white;
+    color: #4b5fd4;
+    font-family: 'Tommy Regular Personal';
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 1.8rem;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em white;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+  .form-perfil-img{
+    max-width: 150px;
+    max-height:150px;
+
+    }
+
+
+
+  }
+   @media screen and (max-height: 600px) {
+        .content{
+
+         height: 100%;
+        }
+
+
+}
+  @media screen and  (max-width: 500px) {
+
+    .content{
+      height: 100vh;
+    }
+    .form {
+
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+
+    }
+    .form-input-text{
+      padding: 0.8rem;
+
+    }
+  }
+
+  @media screen and  (max-width: 375px) {
+
+  .subtitulo{
+    font-size: 1.5rem;
+  }
+
+  .form {
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+
+
+  }
+  .custom-btn {
+
+    padding-left: 1.2em;
+    font-size: 1.4rem;
+
+    padding-right: 3.3em;
+
+  }
+  .label-opcao{
+    font-size: 1.35rem;
+  }
+
+  }
+
+
+
+  @media screen and  (max-width: 290px) {
+    .custom-btn {
+
+      padding-left: 1.2em;
+      font-size: 1.2rem;
+
+      padding-right: 3.3em;
+
+    }
+    .titulo{
+      font-size: 3rem;
+    }
+}

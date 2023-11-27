@@ -1,5 +1,14 @@
 <?php
 include_once("./controles-sindicos/verifica-sessao-sindico.php");
+include_once("../controles-comuns/conecta-banco.php");
+
+$buscaNumeroMoradores = $conn->prepare("SELECT COUNT(*) as numero_reclamacoes FROM RECLAMACOES WHERE CNPJ_CONDOMINIO = ?");
+$buscaNumeroMoradores->bind_param("s", $_SESSION['cnpj']);
+$buscaNumeroMoradores->execute();
+$buscaNumeroMoradores->bind_result($numeroReclamacoes);
+$buscaNumeroMoradores->fetch();
+$buscaNumeroMoradores->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -12,36 +21,61 @@ include_once("./controles-sindicos/verifica-sessao-sindico.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../css/stylereclamacoesSINDICO.css">
     <link rel="stylesheet" type="text/css" href="../../css/estilo-tabela.css">
+    <link rel="stylesheet" type="text/css" href="../../css/Aresponsividademenu.css">
 </head>
 
 <body>
 <style>
-table {
+  #content {
+    width: 78%;
+    height: 78%;
+    overflow: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+
+    /* Estilizando a barra de rolagem para torná-la invisível em navegadores WebKit */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: transparent transparent; /* Firefox */
+  }
+
+  #content::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  #content::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+  #content::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  /* Adicione esta regra ao seu estilo CSS existente */
+  table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
     padding: 10px;
-}
+  }
 
-th, td {
+  th, td {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid #ddd;
-}
+  }
 
-th {
+  th {
     background-color: #FFFFFF;
-}
+  }
 
-tr:hover {
+  tr:hover {
     background-color: transparent !important;
-}
+  }
 
-caption {
+  caption {
     font-size: 1.5em;
     margin-bottom: 10px;
-}
-
+  }
 </style>
     <!----------------------------------TELA RECLAMAÇÕES---------------------------------------------->
 
@@ -82,61 +116,84 @@ caption {
             <div class="input-container">
                 <label for="titulo1" class="label-cabecalho label-titulo1">Reclamações</label>
                 <?php
-                session_start();
-                include_once("../controles-comuns/conecta-banco.php");
+                
+                
+                if ($numeroReclamacoes < 1) {
+                    echo '<h1>Ainda não temos nenhuma reclamacao, parabens!</h1>';
+                } else {
+                    $sql = "SELECT *
+                            FROM RECLAMACOES
+                            WHERE CNPJ_CONDOMINIO = ?
+                            ORDER BY 
+                              CASE 
+                                WHEN PRIORIDADE = 'Urgente' THEN 1
+                                WHEN PRIORIDADE = 'Importante' THEN 2
+                                ELSE 3 
+                              END,
+                              DATA_HORA_REGISTRO;";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bind_param("s", $_SESSION['cnpj']);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    ?>
 
-                $sql = "SELECT TITULO, PRIORIDADE, AUTOR FROM RECLAMACOES WHERE CNPJ_CONDOMINIO = ?";
-                $stmt = $conn->prepare($sql);
-                $stmt->bind_param("s", $_SESSION['cnpj']);
-                $stmt->execute();
-                $result = $stmt->get_result();
-                ?>
-
-                <div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th scope="col">Título</th>
-                                <th scope="col">Prioridade</th>
-                                <th scope="col">Autor</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            while ($user_data = mysqli_fetch_assoc($result)) {
-                                echo "<tr>";
-                                echo "<td>" . $user_data['TITULO'] . "</td>";
-                                echo "<td>" . $user_data['PRIORIDADE'] . "</td>";
-                                echo "<td>" . $user_data['AUTOR'] . "</td>";
-                                echo "</tr>";
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Título</th>
+                                    <th scope="col">Prioridade</th>
+                                    <th scope="col">Autor</th>
+                                    <th scope="col">Detalhes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                while ($user_data = $result->fetch_assoc()) {
+                                    echo "<tr>";
+                                    echo "<td>" . $user_data['TITULO'] . "</td>";
+                                    echo "<td>" . $user_data['PRIORIDADE'] . "</td>";
+                                    echo "<td>" . $user_data['AUTOR'] . "</td>";
+                                    echo "<td><a href=''>Ver mais</a></td>";
+                                    echo "</tr>";
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                <?php } ?>
             </div>
         </div>
 
-        <!----------------------------------CAIXA DE OBSERVAÇÃO---------------------------------------------->
+        <!----------------------------------MENU 2---------------------------------------------->
 
-        <div id="content2">
-            <span class="label-observacao">Acesse as reclamações enviadas pelos moradores e fique ciente dos problemas
-                encontrados no seu condomínio.</span>
+        <div id="menu2">
+            <div class="detalhes">ggg</div>
+
+            <!----------------------------------CAIXA DE OBSERVAÇÃO---------------------------------------------->
+
+            <div id="content2">
+                <span class="label-observacao">Acesse as reclamações enviadas pelos moradores e fique ciente dos problemas
+                    encontrados no seu condomínio.</span>
+            </div>
+
         </div>
 
-    </div>
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            var content = document.getElementById("content");
+        <script src="../../js/menulateral.js"></script>
 
-            if (menu.style.width === "200px") {
-                menu.style.width = "0";
-            } else {
-                menu.style.width = "200px";
+        <script>
+            function toggleMenu2() {
+                var menu = document.getElementById("menu2");
+                var content = document.getElementById("content");
+
+                if (menu.style.width === "350px") {
+                    menu.style.width = "0";
+                } else {
+                    menu.style.width = "350px";
+                }
             }
-        }
-    </script>
-</body>
+        </script>
+
+    </body>
 
 </html>

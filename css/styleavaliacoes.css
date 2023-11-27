@@ -452,6 +452,194 @@ img{
     stroke-width: 50; /* Aumenta a espessura do traço do ícone */
     fill: white; /* Define a cor de preenchimento como branco (se necessário) */
   }
+  
 
+
+/*------------------RESPONSIVIDADE---------------------*/
+
+ @media screen  and (max-width:1680px){
+    .label-observacao{
+      border: 1px solid;
+      background-color: white;
+      border-color: rgb(207, 207, 207);
+      border-radius: 20px;
+      margin-top: 0;
+      padding: 1rem;
+    }
+    #content2{
+      border: none;
+      background-color: transparent;
+      border-color: transparent;
+      border-radius: initial;
+      height: 29%;
+      margin-top: 15%;
+    }
+  }
+  @media screen and (max-width:1400px) {
+   #content2{
+    height: 35%;
+   } 
+  }
+    @media screen and (max-width: 1280px) {
+   
+      #content-wrapper{
+        
+        flex-direction: column;
+        height: 100vh;
+      }
+      .opcoes div{
+        flex-direction: column;
+        margin-left: 0;
+      }
+      #content-wrapper img{
+        display: none;
+      }
+      #content{
+        place-items: center;
+        width: 30rem; /* Ajuste a largura conforme necessário */
+        height: 50rem;
+        margin-bottom: 2%;
+        margin-top: 2%;
+        
+  
+      }
+      label span {
+border-radius: .375em;
+      }
+      
+      label:first-child span {
+        border-radius: .375em;;
+      }
+      
+      label:last-child span {
+        border-radius: .375em;;
+      }
+      #content2{
+        width: 100%;
+        max-width: 60%;
+        height: 100%;
+        max-height: 10rem;
+        margin-bottom: 2%;
+        margin-right: 0;
+        margin-top: 0;
+        border: none;
+      background-color: transparent;
+      border-color: transparent;
+      border-radius: initial;
+  
+      }
+      body{
+        overflow: visible;
+      }
+      .icone-logo{
+        width: 9%;
+        margin-left: 0;
+      }
+      .label-observacao{
+        border: 1px solid;
+      background-color: white;
+      border-color: rgb(207, 207, 207);
+      border-radius: 20px;
+      margin-top: 0;
+      }
+      }
+      @media screen and (max-height: 910px) {
+        #content-wrapper{
+        
+          
+          height: 100%;
+        }
+      }
+      @media screen and (max-width:720px) {
+        #content2{
+          max-width: 100%;
+        }
+      }
+      @media screen and (max-width: 510px) {
+        .label-titulo1 {
+          font-size: 2.5rem;
+      }
+      #content{
+        
+        max-width: 22rem;
+        height: 50rem;
+       
+      
+  
+      }
+  
+    }
+    @media screen and (max-width: 380px) {
+    
+      .label-evento{
+        font-size: 0.9rem;
+      }
+      .label-nota{
+        font-size: 0.9rem;
+      }
+     
+      .form-input-title{
+        font-size: 1rem;
+  
+      }
+      .label-descricao{
+        font-size: 0.9rem;
+      }
+      .form-input-desc{
+        font-size: 1rem;
+      }
+     
+      .label-observacao{
+   
+        font-size: 1.1rem;
+      }
+      .icone-logo{
+        width: 12%;
+        
+      }
+      #content{
+      
+        width: 18rem;
+        height: 45rem;
+  
+      }
+    }
+    @media screen and (max-width: 300px) {
+      .label-titulo1{
+        font-size: 1.5rem;
+       
+      }
+    
+      
+      .label-observacao{
+        font-size: 1rem;
+        padding: 0;
+        
+      }
+      #content{
+    
+        width: 13rem;
+        height: 44rem;
+        
+        margin-top: 2%;
+  
+      }
+  
+  .custom-btn{
+    font-size: 1rem;
+  }
+  .form-input-title{
+    font-size: 0.9rem;
+
+  }
+  .form-input-desc{
+    font-size: 0.9;
+    padding: 0.4rem;
+  }
+.label-opcao{
+  font-size: 1.1rem;
+}
+
+    }
 
 

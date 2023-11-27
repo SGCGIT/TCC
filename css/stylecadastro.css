@@ -288,6 +288,7 @@ stroke-width: 50; /* Aumenta a espessura do traço do ícone */
 fill: white; /* Define a cor de preenchimento como branco (se necessário) */
 }
 
+
 /* Responsividade  ---- NÃO MEXER!*/
 @media screen and  (max-width: 605px){
 .form-input-text{
@@ -410,3 +411,6 @@ font-size: 1.35rem;
   font-size: 3rem;
 }
 }
+
+
+
