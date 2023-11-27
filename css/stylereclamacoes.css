@@ -1,0 +1,441 @@
+/*-----------------PAGINA----------------------*/
+
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    overflow-y: hidden; /* Impede a rolagem vertical */
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4b5fd4;
+    padding: 0.1%;
+    z-index: 1;
+    position: relative;
+    height: 63px; /* Ajuste a altura conforme necessário */
+}
+
+#menu {
+    width: 0; /* Alterado para 0 para iniciar fechado */
+    max-height: calc(100% - 60px);
+    background-color: #4b5fd4;
+    position: fixed;
+    top: 58px;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: 0.5s;
+    padding-top: 10px;
+    z-index: 0;
+}
+
+#menu a {
+    padding: 15px; 
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Tommy Regular Personal';
+    color: #4b5fd4; 
+    background-color: white; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+    transition: 0.3s;
+    border: none;
+    border-radius: 10px; 
+    margin-top: 2px;
+    margin-bottom: 13px; 
+    margin-right: 10px;
+}
+
+
+#menu a:hover {
+    background-color: #202855;
+    color: white;
+}
+
+#menu a img {
+    width: 50px;
+    height: auto;
+    margin-right: 5px;
+    margin-top: 0.1rem;
+    margin-bottom: 0.5rem;
+}
+
+
+#content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background-color: #f4f5ff; /* Cor de fundo do retângulo */
+}
+
+#content {
+    width: 50%; /* Ajuste a largura conforme necessário */
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    background-color: #4b5fd4; /* Cor de fundo do conteúdo */
+    padding: 0.5%;
+    border-radius: 20px; /* Borda arredondada */
+    flex-direction: column;
+    margin-bottom: 4%;
+    margin-right: 4%;
+    margin-left: 5%;
+}
+
+#content2{
+    width: 18%;
+    height: 20%;
+    display: flex;
+    justify-content: left;
+    border: 1px solid;
+    background-color:  white; 
+    border-color:  rgb(207, 207, 207);
+    border-radius: 20px;
+    margin-bottom: 34.5%;
+    margin-right: 5%;
+  
+}
+
+/*------------------BOTAO MENU---------------------*/
+
+.btnmenu {
+    width: 45px; /* Largura desejada */
+    height: 45px; /* Mantém a proporção original da imagem */
+    border-radius: 10px; /* Borda arredondada com raio de 10 pixels */
+    background-color: #4b5fd4;
+    margin: 1px;
+    display: flex; /* Adicionando display flex para centralizar */
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+    border: none; 
+}
+
+.icone-menu {
+    width: 40px; /* Largura desejada */
+    height: 40px; /* Mantém a proporção original da imagem */
+    border-radius: 10px; /* Borda arredondada com raio de 10 pixels */
+}
+
+/*-----------------BOTÕES DE FUNCIONALIDADES---------------------*/
+
+.btntelas {
+    background-color: #4b5fd4; /* Mesma cor azul */
+    border: none; /* Remova a borda */
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 10px;
+    width: 100px; /* Mesma largura dos quadrados */
+    height: 80px; /* Mesma altura dos quadrados */
+    cursor: pointer; /* Adicione um cursor de ponteiro ao passar o mouse */
+    display: flex; /* Tornar os botões em blocos para que fiquem em uma coluna vertical */
+    justify-content: center; /* Centraliza horizontalmente */
+    float: none; /* Remova o alinhamento anterior */
+    clear: left; /* Certifique-se de que os botões estejam limpos à esquerda */
+}
+
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #202855;
+}
+
+/*------------------LOGO HEADER---------------------*/
+
+.icone-logo{
+  width: 3.5%; /* Mesma largura dos quadrados */
+  height: 90%; /* Mesma altura dos quadrados */
+  margin-left: 90%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+/*------------------LOGO---------------------*/
+
+img{
+  width: 17%;
+  height: 30%;
+  margin-left: 3%;
+  margin-bottom: 10%;
+}
+
+/*------------------FONTES---------------------*/
+
+
+@font-face {
+    font-family: 'Tommy Medium Personal';
+    src: url(../fontes/MADE\ TOMMY\ Medium_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tommy Regular Personal';
+    src: url(../fontes/MADE\ TOMMY\ Regular_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tommy Light Personal';
+    src: url(../fontes/MADE\ TOMMY\ Light_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*------------------TEXTOS RECLAMAÇÕES---------------------*/
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-titulo1 {
+    font-family: 'Tommy Regular Personal';
+    color: white;
+    margin-bottom: 4%;
+    margin-top: 1%;
+    margin-left: 5%;
+    font-size: 3rem;
+}
+
+.label-titulo2{
+    font-family: 'Tommy Regular Personal';
+    color: white;
+    font-size: 1.3rem;
+    margin-left: 5%;
+}
+
+.label-tipo{
+    font-family: 'Tommy Regular Personal';
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 0.5%;
+    margin-left: 5%;
+}
+
+.label-area{
+    font-family: 'Tommy Regular Personal';
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 0.5%;
+    margin-left: 5%;
+}
+
+.label-descricao{
+    font-family: 'Tommy Regular Personal';
+    color: white;
+    font-size: 1.3rem;
+    margin-left: 5%;
+}
+
+.label-observacao{
+    font-family: 'Tommy Regular Personal';
+    color: #4b5fd4;
+    font-size: 1.3rem;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-right: 5%;
+}
+
+/*-----------------TEXTO OPCOES-----------------------*/
+
+.opcoes{
+    padding-bottom: 2rem;
+}
+
+
+.label-opcao{
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: 'Tommy Regular Personal';   
+    color:#4b5fd4;
+}
+
+.label-opcao2{
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: 'Tommy Regular Personal';   
+    color:#4b5fd4;
+    margin-bottom: 20%;
+}
+
+.label-opcao:hover{
+    background-color: #202855;
+    color:white;
+}
+
+
+/*-----------------CAIXAS DE TEXTO-----------------------*/
+
+.form-input-title{
+    width: 55%; 
+    padding: 0.5rem;
+    border-radius: 10px;
+    border-color: #202855;
+    font-size: 1.3rem;
+    text-align: left;
+    margin-bottom: 3%;
+    margin-top: 1%;
+    margin-left: 5%;
+}
+
+.form-input-desc{
+    width: 65%; 
+    height: 100px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border-color: #202855;
+    font-size: 1.3rem;
+    text-align: left;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    margin-left: 5%;
+}
+
+/*-----------------OPCAO-----------------------*/
+
+:focus {
+    outline: 0;
+    border-color: #2260ff;
+    box-shadow: 0 0 0 4px #b5c9fc;
+  }
+  
+.opcoes div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    margin-left: 5%;
+  }
+  
+  .opcoes input[type="radio"] {
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  
+  .opcoes input[type="radio"]:checked + span {
+    box-shadow: 0 0 0 0.0625em white;
+    background-color: #202855;
+    z-index: 1;
+    color: white;
+  }
+  
+  label span {
+    display: block;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 0.375em .75em;
+    position: relative;
+    margin-left: .0625em;
+    box-shadow: 0 0 0 0.0625em #b5bfd9;
+    letter-spacing: .05em;
+    color: #3e4963;
+    text-align: center;
+    transition: background-color .5s ease;
+  }
+  
+  label:first-child span {
+    border-radius: .375em 0 0 .375em;
+  }
+  
+  label:last-child span {
+    border-radius: 0 .375em .375em 0;
+  }
+
+/*-----------------BOTÃO-----------------------*/
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .custom-btn {
+      background: white;
+      color: #4b5fd4;
+      font-family: 'Tommy Regular Personal';
+      padding: 0.35em;
+      padding-left: 1.2em;
+      font-size: 1.3rem;
+      font-weight: 500;
+      border-radius: 0.9em;
+      border: none;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      box-shadow: inset 0 0 1.6em -0.6em white;
+      overflow: hidden;
+      position: relative;
+      height: 2.8em;
+      padding-right: 3.3em;
+      margin-bottom: 3%;
+      margin-top: 1%;  
+      margin-left: 5%;
+    }
+    
+    .custom-btn .icon {
+      background-color: #4b5fd4;
+      margin-left: 1em;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.2em;
+      width: 2.2em;
+      border-radius: 0.7em;
+      box-shadow: 0.1em 0.1em 0.6em 0.2em white;
+      right: 0.3em;
+      transition: all 0.3s;
+     
+    }
+    
+    .custom-btn:hover .icon {
+      width: calc(100% - 0.6em);
+    }
+    
+    .custom-btn .icon svg {
+      width: 1.5em; /* Aumenta a largura em 1.5 vezes */
+      height: 1.5em; /* Aumenta a altura em 1.5 vezes */
+      transition: transform 0.3s;
+      color: white;
+      fill: white;
+      
+    }
+    
+    .custom-btn:hover .icon svg {
+      transform: translateX(-0.1em);
+    }
+  
+    custom-btn .btn1:hover .icon svg {
+      transform: translateX(-0.1em);
+    }
+    
+    
+    .custom-btn:active .icon {
+      transform: scale(0.95);
+    }
+  
+  .iconvoltar svg {
+    stroke: white; /* Define a cor do contorno como branco */
+    stroke-width: 50; /* Aumenta a espessura do traço do ícone */
+    fill: white; /* Define a cor de preenchimento como branco (se necessário) */
+  }
+
+
+

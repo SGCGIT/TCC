@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/stylelend.css">
+    <title>Sistema gerenciador de condomínios</title>
+</head>
+
+<body>
+
+    <!----------------------------------TELA LANDING PAGE---------------------------------------------->
+
+    <!----------------------------------CABEÇALHO---------------------------------------------->
+
+    <header>
+        <nav>
+
+            <!----------------------------------LOGO---------------------------------------------->
+
+            <img src="./imagenslend/logo.png" alt="logo" class="logo">
+            <ul>
+
+                <!----------------------------------BOTÃO TELA LOGIN---------------------------------------------->
+
+                <li>
+                    <a href="./tela-login.php">Login</a>
+                </li>
+
+                <!----------------------------------BOTÃO TELA CADASTRO---------------------------------------------->
+
+                <li>
+                    <a href="./tela-cadastro.php">Cadastro</a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+
+    <!----------------------------------PAPEL DE PAREDE---------------------------------------------->
+
+    <main>
+        <div class="content">
+            <img src="./imagenslend/condominio.png" data-speedx="0.03" data-speedy="0.038" data-speedz="0"
+                data-rotation="0" data-distance="-200" alt="imagem" class="parallax bg-img">
+
+            <div class="text parallax" data-speedx="0.03" data-speedy="0.038" data-speedz="0.2" data-rotation="0.14"
+                data-distance="0">
+                <h2 class="h2text">SGC</h2>
+                <h1 class="h1text">Sistema gerenciador de condomínio</h1>
+            </div>
+            <img src="./imagenslend/setabaixofinal.png" alt="imagem" data-speedx="0.059" data-speedy="0.024"
+                data-speedz="0.35" data-rotation="0.14" data-distance="3400" class="parallax mountain-4">
+        </div>
+
+        <!----------------------------------CONTEÚDO 1---------------------------------------------->
+
+        <div class="descricao ">
+            <div class="descricao-cont">
+                <div class="descricao-texto">
+                    <div class="descicao-conteudo ">
+                        <div class="texto-dinamico">
+                            <div class="animated-text">
+                                <div class="dynamic-text"><span></span></div>
+                            </div>
+                        </div>
+                        <img src="./imagenslend/building.gif" alt="Imagem" class="descricao-img2">
+                        <h2 class="descricao-titulo">Tudo que você precisa em um só lugar!</h2>
+                        <p class="descricao-desc">
+                            Imagine um software completo para gerenciar seu condomínio e melhorar a comunicação dentro
+                            dele. Com recursos como calendário, gestão de reclamações, agendamento de eventos, lista de
+                            moradores e muito mais! Tudo isso com organização, eficiência, transparência e facilidade de
+                            uso para condomínios de todos os tamanhos. Simplifique a gestão, economize tempo e promova
+                            uma comunidade mais conectada. Bem-vindo ao futuro do gerenciamento de condomínios!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!----------------------------------CONTEÚDO 2---------------------------------------------->
+
+        <div class="cards fadeIn">
+            <section class="card contact">
+                <div class="icon">
+                    <img src="./imagenslend/coracao-de-mao.png" alt="Contact us." class="icone-coracao">
+                </div>
+                <h3 class="h3text h31">Melhore a relação com seus vizinhos</h3>
+                <span class="spaninfo spaninfo3">Construa com o SGC uma comunicação limpa e direta com os moradores de
+                    seu condomínio.</span>
+                <a href="./tela-cadastro.php" target="_blank"> <button class="btn-card">Cadastre-se</button></a>
+            </section>
+            <section class="card shop">
+                <div class="icon">
+                    <img src="./imagenslend/construcao.png" alt="Shop here." class="icone-predio">
+                </div>
+                <h3 class="h3text h31">Avisos dinâmicos e eficientes</h3>
+                <span class="spaninfo spaninfo3">Seus avisos são apresentados de maneira prática e organizada, sem
+                    nenhuma dificuldade de entendimento.</span>
+                <a href="./tela-cadastro.php" target="_blank"><button class="btn-card"
+                        href="./tela-cadastro.php">Cadastre-se</button></a>
+            </section>
+            <section class="card about">
+                <div class="icon">
+                    <img src="./imagenslend/atendimento.png" alt="About us." class="icone-atendimento">
+                </div>
+                <h3 class="h3text h31">Reclamações organizadas</h3>
+                <span class="spaninfo spaninfo3">Saiba o nivel de urgência e tema de cada reclamação, antes mesmo de
+                    visualiza-la. Interface visando melhor eficácia.</span>
+                <a href="./tela-cadastro.php" target="_blank"><button class="btn-card">Cadastre-se</button></a>
+            </section>
+        </div>
+    </main>
+
+    <!----------------------------------EFEITO PÁGINA---------------------------------------------->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="./js/applend.js"></script>
+    <footer class="fundodiv">
+
+
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallaxfooter">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </div>
+
+        <!----------------------------------RODAPÉ---------------------------------------------->
+
+        <div class="contfundo flex">
+            <p class="label-sgc">SGC | Sistema Gerenciador de Condominio</p>
+            <p class="label-instagram"><a href="https://www.instagram.com/sgcoficial/">Página no Instagram</a></p>
+            <p class="label-email"><a
+                    href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRsqXlqlXvgkWwtTZbSZNnfQbFDGRGQSxgFXvNXcBBHXGnMsxmxCwJcTVDnWcnGWnPPvdbv">Email
+                    para contato.</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>

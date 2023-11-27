@@ -1,0 +1,264 @@
+/*-----------------PAGINA----------------------*/
+
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    overflow-y: hidden; /* Impede a rolagem vertical */
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4b5fd4;
+    padding: 0.1%;
+    z-index: 1;
+    height: 63px; /* Ajuste a altura conforme necessário */
+    position: fixed;
+    top: 1;
+    width: 100%;
+}
+
+#menu {
+    width: 0; /* Alterado para 0 para iniciar fechado */
+    max-height: calc(100% - 60px);
+    background-color: #4b5fd4;
+    position: fixed;
+    top: 63px;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: 0.5s;
+    padding-top: 10px;
+    z-index: 0;
+}
+
+#menu a {
+    padding: 15px; 
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Tommy Regular Personal';
+    color: #4b5fd4; 
+    background-color: white; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+    transition: 0.3s;
+    border: none;
+    border-radius: 10px; 
+    margin-top: 2px;
+    margin-bottom: 13px; 
+    margin-right: 10px;
+   
+}
+
+
+#menu a:hover {
+    background-color: #202855;
+    color: white;
+}
+
+#menu a img {
+    width: 50px;
+    height: auto;
+    margin-right: 5px;
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+}
+
+
+#content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background-color: #f4f5ff; /* Cor de fundo do retângulo */
+}
+
+
+
+/*------------------BOTAO MENU---------------------*/
+
+.btnmenu {
+    width: 45px; /* Largura desejada */
+    height: 45px; /* Mantém a proporção original da imagem */
+    border-radius: 10px; /* Borda arredondada com raio de 10 pixels */
+    background-color: #4b5fd4;
+    margin: 1px;
+    display: flex; /* Adicionando display flex para centralizar */
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+    border: none; 
+}
+
+.icone-menu {
+    width: 40px; /* Largura desejada */
+    height: 40px; /* Mantém a proporção original da imagem */
+    border-radius: 10px; /* Borda arredondada com raio de 10 pixels */
+}
+
+/*-----------------BOTÕES DE FUNCIONALIDADES---------------------*/
+
+.btntelas {
+    background-color: #4b5fd4; /* Mesma cor azul */
+    border: none; /* Remova a borda */
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 10px;
+    width: 130px; /* Mesma largura dos quadrados */
+    height: 110px; /* Mesma altura dos quadrados */
+    cursor: pointer; /* Adicione um cursor de ponteiro ao passar o mouse */
+    display: flex; /* Tornar os botões em blocos para que fiquem em uma coluna vertical */
+    justify-content: center; /* Centraliza horizontalmente */
+    float: none; /* Remova o alinhamento anterior */
+    clear: left; /* Certifique-se de que os botões estejam limpos à esquerda */
+}
+
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #202855;
+}
+
+/*------------------LOGO HEADER---------------------*/
+
+.icone-logo{
+    width: 7%; /* Mesma largura dos quadrados */
+    height: 93%; /* Mesma altura dos quadrados */
+    margin-left: 94.2%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+/*------------------FONTES---------------------*/
+
+@font-face {
+    font-family: 'Tommy Medium Personal';
+    src: url(../fontes/MADE\ TOMMY\ Medium_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tommy Regular Personal';
+    src: url(../fontes/MADE\ TOMMY\ Regular_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tommy Light Personal';
+    src: url(../fontes/MADE\ TOMMY\ Light_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*------------------CALENDÁRIO---------------------*/
+
+#calendar {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+/*------------------TEXTOS CALENDÁRIO---------------------*/
+
+.label-calendario{
+    font-family: 'Tommy Regular Personal';
+    color: #4b5fd4;
+    margin-bottom: 0.5%;
+    margin-top: 4.5%;
+    margin-left: 11%;
+    font-size: 3rem;
+}
+
+/*-----------------BOTÃO CRIAR-----------------------*/
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    }
+    
+    .custom-btn {
+      background: #4b5fd4;
+      color: white;
+      font-family: 'Tommy Regular Personal';
+      padding: 0.35em;
+      padding-left: 1.2em;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 0.9em;
+      border: none;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      box-shadow: inset 0 0 1.6em -0.6em #4b5fd4;
+      overflow: hidden;
+      position: relative;
+      height: 2.8em;
+      padding-right: 3.3em;
+      margin-bottom: 15px;
+      margin-top: 15px;  
+    }
+    
+    .custom-btn .icon {
+      background-color: white;
+      margin-left: 1em;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.2em;
+      width: 2.2em;
+      border-radius: 0.7em;
+      box-shadow: 0.1em 0.1em 0.6em 0.2em #4b5fd4;
+      right: 0.3em;
+      transition: all 0.3s;
+     
+    }
+    
+    .custom-btn:hover .icon {
+      width: calc(100% - 0.6em);
+    }
+    
+    .custom-btn .icon svg {
+      width: 1.5em; /* Aumenta a largura em 1.5 vezes */
+      height: 1.5em; /* Aumenta a altura em 1.5 vezes */
+      transition: transform 0.3s;
+      color: #4b5fd4;
+      fill: white;
+      
+    }
+    
+    .custom-btn:hover .icon svg {
+      transform: translateX(-0.1em);
+    }
+    
+    custom-btn .btn1:hover .icon svg {
+      transform: translateX(-0.1em);
+    }
+    
+    
+    .custom-btn:active .icon {
+      transform: scale(0.95);
+    }
+    
+    .iconvoltar svg {
+    stroke: white; /* Define a cor do contorno como branco */
+    stroke-width: 50; /* Aumenta a espessura do traço do ícone */
+    fill: white; /* Define a cor de preenchimento como branco (se necessário) */
+    }
+
+
+
+
+
+
+

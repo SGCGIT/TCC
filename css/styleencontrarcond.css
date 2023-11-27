@@ -1,0 +1,187 @@
+/*-----------------PAGINA----------------------*/
+
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+#header {
+    background-color: #4b5fd4; /* Azul */
+    padding: 10px;
+}
+
+#content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background-color: white; /* Cor de fundo do retângulo */
+    flex-direction: column;
+}
+
+#content {
+    width: 60%; /* Ajuste a largura conforme necessário */
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    background-color: #4b5fd4; /* Cor de fundo do conteúdo */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    border-radius: 10px; /* Borda arredondada */
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+
+/*------------------FONTES---------------------*/
+
+
+@font-face {
+    font-family: 'Tommy Medium Personal';
+    src: url(../fontes/MADE\ TOMMY\ Medium_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tommy Regular Personal';
+    src: url(../fontes/MADE\ TOMMY\ Regular_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tommy Light Personal';
+    src: url(../fontes/MADE\ TOMMY\ Light_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*------------------TEXTOS---------------------*/
+
+.label-titulooficial {
+    text-align: center;
+    font-family: 'Tommy Medium Personal';
+    color: #4b5fd4;
+    margin-top: 10px;
+    font-size: 3rem;
+    left: 50%; /* Alinhar ao centro horizontal */
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.label-titulo {
+    font-family: 'Tommy Regular Personal';
+    color: white;
+    margin-bottom: 5px; /* Espaço entre a label e a caixa de texto ou opções */
+    margin-top: 10px; /* Espaço entre a label e a caixa de texto ou opções */
+    font-size: 3rem;
+}
+
+.label-mensagem {
+    font-family: 'Tommy Regular Personal';
+    color: white;
+    margin-bottom:10px; /* Espaço entre a label e a caixa de texto ou opções */
+    margin-top: 20px; /* Espaço entre a label e a caixa de texto ou opções */
+    font-size: 1.3rem;
+}
+
+
+.label-selecionar {
+    font-family: 'Tommy Regular Personal';
+    color: white;
+    margin-bottom:10px; /* Espaço entre a label e a caixa de texto ou opções */
+    margin-top: 20px; /* Espaço entre a label e a caixa de texto ou opções */
+    font-size: 1.3rem;
+}
+
+/*-----------------BOTÃO-----------------------*/
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .custom-btn {
+      background: white;
+      color: #4b5fd4;
+      font-family: 'Tommy Regular Personal';
+      padding: 0.35em;
+      padding-left: 1.2em;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 0.9em;
+      border: none;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      box-shadow: inset 0 0 1.6em -0.6em white;
+      overflow: hidden;
+      position: relative;
+      height: 2.8em;
+      padding-right: 1em;
+      margin-bottom: 15px;
+      margin-top: 15px;  
+      margin-right: 600px;
+    }
+    
+    .custom-btn .icon {
+      background-color: #4b5fd4;
+      margin-left: 1em;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.2em;
+      width: 2.2em;
+      border-radius: 0.7em;
+      box-shadow: 0.1em 0.1em 0.6em 0.2em white;
+      right: 0.3em;
+      transition: all 0.3s;
+     
+    }
+    
+    .custom-btn:hover .icon {
+      width: calc(100% - 0.6em);
+    }
+    
+    .custom-btn .icon svg {
+      width: 1.5em; /* Aumenta a largura em 1.5 vezes */
+      height: 1.5em; /* Aumenta a altura em 1.5 vezes */
+      transition: transform 0.3s;
+      color: white;
+      fill: white;
+      
+    }
+    
+    .custom-btn:hover .icon svg {
+      transform: translateX(-0.1em);
+    }
+  
+    custom-btn .btn1:hover .icon svg {
+      transform: translateX(-0.1em);
+    }
+    
+    
+    .custom-btn:active .icon {
+      transform: scale(0.95);
+    }
+  
+  .iconvoltar svg {
+    stroke: white; /* Define a cor do contorno como branco */
+    stroke-width: 50; /* Aumenta a espessura do traço do ícone */
+    fill: white; /* Define a cor de preenchimento como branco (se necessário) */
+  }
+
+
+
+

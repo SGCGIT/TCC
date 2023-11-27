@@ -1,0 +1,760 @@
+/*-----------------PAGINA----------------------*/
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Tommy Regular Personal';
+    background-color: #4b5fd4;
+    
+}
+::selection{
+    background-color: #0b372dbb;
+}
+
+header{
+    position:absolute;
+    z-index:9990;
+    width: 100%;
+    padding: 0.9rem 0;
+    top:0 ;
+    left: 0;
+}
+
+header nav{
+    max-width: 100%;
+    padding: 0 1rem; /* Adjust padding for smaller screens */
+    display: flex;
+    justify-content: space-between; /* Spread items horizontally */
+}
+
+header ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+
+
+header ul a {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: black.15em 0.15em;
+    border: black solid 2px;
+    background: linear-gradient(to right, #3E8AFF, #4b5fd4);
+    text-decoration: none;
+    color: white;
+    padding: 0 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin: 1rem;
+    border-radius: 10px;
+    
+  }
+
+
+  header ul a:active {
+    transform: translate(0.05rem, 0.05rem);
+    box-shadow: 0.01em 0.01rem;
+  }
+  
+  
+.content{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    max-width: 100%;
+}
+
+
+/*------------------FONTES---------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;800&display=swap');
+
+@font-face {
+    font-family: 'Tommy Medium Personal';
+    src: url(../fontes/MADE\ TOMMY\ Medium_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tommy Regular Personal';
+    src: url(../fontes/MADE\ TOMMY\ Regular_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tommy Light Personal';
+    src: url(../fontes/MADE\ TOMMY\ Light_PERSONAL\ USE.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*------------------LOGO--------------------*/
+
+.logo{
+    width: 130px;
+}
+
+/*------------------IMAGEM DE FUNDO DO CONDOMINIO--------------------*/
+
+
+.bg-img{
+    position: absolute;
+    z-index: 1;
+    width: 2800px;
+    top:calc(50% - 350px);
+    left: calc(50% + 10px);
+    transform: translate(-50%,-50%);
+}
+
+/*------------------TITULO PAGINA--------------------*/
+
+.text{
+    z-index: 9;
+    position: absolute;
+    top:calc(50% - 130px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    
+    font-family: 'Tommy Light Personal';
+    pointer-events: auto;
+}
+.h2text{
+    font-weight: 400;
+    font-size: 6.5rem;
+    line-height: 0.88;
+    text-shadow: 1px 1px black;
+    font-family: 'Tommy Light Personal';
+}
+.h1text{
+    font-weight: 400;
+    font-size: 3rem; 
+    line-height: 0.88;
+    text-shadow: 1px 1px black;
+    font-family: 'Tommy Light Personal';
+}
+
+.mountain-4{
+    position: absolute;
+    z-index: 14;
+    top: calc(50% + 221px);
+    width: 117px;
+    left: calc(50% - 0px);
+    }  
+
+.parallax{
+    pointer-events: none;
+    transition: 0.45s cubic-bezier(0.2, 0.49, 0.32, 0.99);
+}
+
+/*------------------BOTOES--------------------*/
+
+
+.custom-btn {
+    background: white;
+    color: #4b5fd4;
+    font-family: 'Tommy Regular Personal';
+    padding: 0.35em;
+    padding-right: 3.3em;
+    padding-left: 1.2em;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em white;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    margin-bottom: 15px;
+    margin-top: 15px;  
+    margin-right: 40px;
+    
+  }
+  
+  .custom-btn .icon {
+    background-color: #4b5fd4;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em white;
+    right: 0.3em;
+    transition: all 0.3s;
+   
+  }
+  
+  .custom-btn:hover .icon {
+    width: calc(100% - 0.6em);
+  }
+  
+  .custom-btn .icon svg {
+    width: 1.5em; /* Aumenta a largura em 1.5 vezes */
+    height: 1.5em; /* Aumenta a altura em 1.5 vezes */
+    transition: transform 0.3s;
+    color: white;
+    fill: white;
+    
+  }
+  
+  .custom-btn:hover .icon svg {
+    transform: translateX(-0.1em);
+  }
+
+  custom-btn .btn1:hover .icon svg {
+    transform: translateX(-0.1em);
+  }
+  
+  
+  .custom-btn:active .icon {
+    transform: scale(0.95);
+  }
+
+/*------------------DESCRIÇÃO DO PRODUTO--------------------*/
+
+
+.descricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Tommy Medium Personal';
+}
+
+.descricao-cont{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    
+   
+}
+.descricao-texto{
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.descricao-img{
+    max-width: 100%;
+    display: block;
+    height: 100%;
+    border-radius: 10px;
+    border:  #202855 solid 2px;
+    margin: auto;
+}
+.descicao-conteudo{
+    padding: 20px;
+    border: 2px solid  #202855;
+    border-radius: 10px;
+    background: linear-gradient(to right, #3E8AFF, #3E8AFF);
+    max-width: 100%;
+    max-height:100% ;
+    box-shadow: 1px 2px  #202855;
+    
+}
+.texto-dinamico{
+    padding: 5px;
+    border-radius: 30px;
+    background-color: white;
+    margin: auto;
+    max-width: 50%;
+    max-height:100% ;
+}
+
+.descricao-titulo {
+    font-size: 30px;
+    margin: 0;
+    color: white;
+    font-family: 'Tommy Regular Personal';
+}
+
+.descricao-img2{
+    display: block;
+    width: 100%;
+    max-width: 10rem;
+    background: #202855;
+    color: #fff;
+    padding: 1.2rem;
+    margin: 1rem auto;
+    border-radius: 10px;
+    padding: 0.2rem;
+    cursor: pointer;
+}
+
+.descricao-desc{
+    font-size: 20px;
+    margin: 20px 0;
+    color: white;
+    font-family: 'Tommy Regular Personal';
+    font-weight: 400;
+}
+
+/*------------------CARDS--------------------*/
+
+.h3text{
+    color: white;
+    font-family: 'Tommy Light Personal';
+}
+
+.spaninfo {
+    color: white;
+    font-family: 'Tommy Regular Personal';
+}
+
+.cards {
+    display: flex;
+    padding: 32px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #434343;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 1s;
+    background-color: none;
+    min-height: 30rem;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+.card{
+    max-width: 15rem;
+    color: black;
+    border: 1px solid  #202855;
+    box-shadow: 2px 3px  #202855;
+    
+}
+
+.icone-coracao{
+    color: white;
+}
+
+
+  .cards section.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-left: 32px;
+    max-height: 320px;
+    overflow: hidden;
+    white-space: wrap;
+    text-overflow: ellipsis;
+    margin-bottom: 30px;
+}
+
+.cards section.card .icon {
+    width: 64px;
+    max-height: 64px;
+    color: white;
+}
+
+.cards section.card img {
+    width: 100%;
+}
+
+.cards section.card h3 {
+    font-size: 100%;
+    margin: 16px 0;
+}
+
+.cards section.card span {
+    font-weight: 300;
+    max-width: 240px;
+    font-size: 1rem;
+    margin-bottom: 16px;
+    
+}
+
+
+.cards section.card.contact {
+    background: linear-gradient(to right, #3E8AFF, #3E8AFF);
+    
+}
+.cards section.card.shop {
+    background: linear-gradient(to right, #3E8AFF, #3E8AFF);
+}
+.cards section.card.about {
+    background: linear-gradient(to right, #3E8AFF, #3E8AFF);
+}
+
+
+
+.cards section.card.contact button{
+    background: linear-gradient(to right, white, white);
+    margin-top: 18px;
+    
+}
+.cards section.card.shop button{
+    background: linear-gradient(to right, white, white);
+}
+.cards section.card.about button{
+    background: linear-gradient(to right, white, white);
+    margin-top: 18px;
+}
+
+/*------------------BOTÕES CARDS--------------------*/
+
+.btn-card{
+    color: #4b5fd4;
+    font-family: 'Tommy Regular Personal';
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 2px solid #4b5fd4;
+    border-radius: 0.4em;
+
+    
+}
+.btn-card:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+    color: #4b5fd4;;
+  }
+  
+.btn-card:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+  }
+/*------------------RESPONSIVIDADE - NÃO MEXER--------------------*/
+
+@media screen and  (max-width: 720px) {
+    main.cards {
+        flex-direction: row;
+    }
+
+    main.cards section.card {
+        margin-left: 0;
+        margin-bottom: 32px;
+    }
+
+    main.cards section.card:last-child {
+        margin-bottom: 0;
+    }
+
+    main.cards section.card button {
+        font-size: 70%;
+    }
+    .cards{
+        opacity: 100%;
+    }
+    .descricao-cont{
+        
+        flex-direction: column;
+      
+    }
+    
+    header nav{
+        padding: 0 1;
+    }
+    .logo{
+        width: 85px;
+    }
+    header ul a{
+        font-size: 1rem;
+        padding: 0 0.9rem;
+        margin: 0.5rem;
+    }
+    
+    
+    .texto-dinamico{
+        max-width: 65%;
+        max-height:100% ;
+        display: block;
+        
+    }
+    .dynamic-text{
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      
+     
+      .text h2{
+        
+        font-size: 5.5rem;
+        margin-top: 100px;
+        
+    }
+    .h1text{
+        
+        font-size: 2rem; 
+       
+    }
+}
+
+
+@media (min-width:980px) {
+    .descicao-conteudo{
+        width: 60%;
+      }
+
+}
+
+@media screen and (min-width: 722px) and (max-width: 1160px) {
+    .dynamic-text{
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      .texto-dinamico{
+        max-width: 65%;
+        max-height:100%;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        
+        
+    }
+}
+
+
+@media screen and (max-width: 560px) {
+    .descricao-titulo {
+        font-size: 1.5rem;
+        margin: 0;
+        
+    }
+    .descricao-desc{
+        font-size: 1rem;
+       
+        
+        
+    }
+    .dynamic-text{
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+      }
+      .texto-dinamico{
+        max-width: 100%;
+        max-height:100% ;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        
+        
+    }
+    .descricao-cont{
+       
+        padding: 10px;
+      
+       
+        
+        
+    }
+    .cards section.card {
+        margin-left: 0;
+        
+    }
+    .mountain-4{
+       
+        width: 100px;
+       
+        }  
+
+
+}
+
+
+/*------------------RODAPÉ---------------------*/
+
+
+.fundodiv {
+    position:relative;
+    text-align:center;
+    background-color:#4b5fd4 ;
+    color:#4b5fd4;
+  }
+  
+  .flex { 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  
+  .waves {
+    position:relative;
+    width: 100%;
+    height:15vh;
+    margin-bottom:-7px; 
+    min-height:100px;
+    max-height:150px;
+    
+  }
+  
+  .contfundo {
+    position:relative;
+    height:10vh;
+    text-align:center;
+    background-color: white;
+    
+  }
+
+  .label-instagram a{
+    text-decoration: none;
+    color: #4b5fd4;
+  }
+
+  .label-email a{
+    text-decoration: none;
+    color: #4b5fd4;
+    
+   
+  }
+
+  
+/*------------------ANIMAÇÃO---------------------*/
+  
+  .parallaxfooter > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+  }
+  .parallaxfooter > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+  .parallaxfooter > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+  .parallaxfooter > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+  .parallaxfooter > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+  @keyframes move-forever {
+    0% {
+     transform: translate3d(-90px,0,0);
+    }
+    100% { 
+      transform: translate3d(85px,0,0);
+    }
+  }
+  /*Shrinking for mobile*/
+  @media (max-width: 768px) {
+    .waves {
+      height:40px;
+      min-height:40px;
+    }
+    .contfundo {
+      height:10vh;
+      
+    }
+    h1 {
+      font-size:24px;
+    }
+  }
+
+  .animated-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.animated-text span{
+    position: relative;
+}
+
+.animated-text span::before{
+    content: "Youtuber";
+    color: #4b5fd4;
+    animation: words 20s infinite;
+}
+
+.animated-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: white;
+    border-left: 2px solid black;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+.static-text{
+    display: inline;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid #ff7f5000;
+    }
+}
+
+@keyframes words {
+    0%,20%{
+        content: "Comunique-se";
+    }
+    21%,40%{
+        content: "Evolua";
+    }
+    41%,60%{
+        content: "Organize-se";
+    }
+    61%,80%{
+        content: "Melhore";
+    }
+    81%,100%{
+        content: "Cresça";
+    }
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
